@@ -1,12 +1,12 @@
 export default function DownloadCTA() {
   return (
     <section id="descarga" className="py-24 md:py-32 bg-[#0F172A] relative overflow-hidden">
-      {/* Single ambient glow — bottom left, doesn't compete with hero */}
+      {/* Single ambient glow — bottom left, different corner from hero */}
       <div
-        className="absolute bottom-0 left-0 w-[600px] h-[400px] pointer-events-none"
+        className="absolute bottom-0 left-0 w-[500px] h-[400px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at bottom left, rgba(249,115,22,0.12) 0%, transparent 60%)",
+            "radial-gradient(ellipse at bottom left, rgba(249,115,22,0.13) 0%, transparent 60%)",
         }}
       />
 
@@ -22,14 +22,14 @@ export default function DownloadCTA() {
           >
             Empieza hoy.
             <br />
-            <span className="text-white/40">Tu bolsillo</span>
+            <span className="text-white/35">Tu bolsillo</span>
             <br />
             te lo agradece.
           </h2>
 
           <p className="text-white/50 text-[16px] leading-relaxed mb-10 max-w-sm">
-            Plan básico gratis para siempre. Sin tarjeta de crédito, sin
-            compromisos.
+            Plan básico gratis para siempre. Sin tarjeta de crédito ni
+            compromisos. Disponible para Android.
           </p>
 
           <a
@@ -47,16 +47,16 @@ export default function DownloadCTA() {
           </p>
         </div>
 
-        {/* Trust signals — horizontal, subdued */}
+        {/* Trust signals */}
         <div className="flex flex-col sm:flex-row gap-5 mt-16 pt-16 border-t border-white/8">
           {[
-            { label: "Datos locales, sin servidores externos" },
-            { label: "Plan gratis siempre disponible" },
-            { label: "Hecho para el mercado peruano" },
+            "Datos locales, sin servidores externos",
+            "Plan gratis siempre disponible",
+            "Hecho para el mercado peruano",
           ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2.5">
+            <div key={item} className="flex items-center gap-2.5">
               <div className="w-1 h-1 rounded-full bg-white/20 shrink-0" />
-              <p className="text-white/35 text-[13px]">{item.label}</p>
+              <p className="text-white/35 text-[13px]">{item}</p>
             </div>
           ))}
         </div>
