@@ -37,7 +37,7 @@ export default function Hero() {
 
             <p className="text-white/55 text-[17px] leading-relaxed mb-10 max-w-[420px]">
               CraveWallet centraliza tus gastos recurrentes, te avisa antes de
-              cada cobro y convierte montos a soles en tiempo real.
+              cada cobro y estima en soles lo que pagas en dólares.
             </p>
 
             {/* CTAs — .btn class handles press feedback */}
@@ -66,7 +66,7 @@ export default function Hero() {
             <div className="flex items-center gap-8 mt-12 pt-10 border-t border-white/8">
               {[
                 { value: "100%", label: "Gratis para empezar" },
-                { value: "S/↔$", label: "Conversión en tiempo real" },
+                { value: "S/↔$", label: "Estimación en soles" },
                 { value: "−24h", label: "Alertas previas al cobro" },
               ].map((s) => (
                 <div key={s.label}>

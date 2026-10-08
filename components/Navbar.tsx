@@ -46,8 +46,10 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-7">
           {[
+            { label: "El problema", href: "#problema" },
             { label: "Funciones", href: "#funciones" },
-            { label: "Preview", href: "#preview" },
+            { label: "Planes", href: "#planes" },
+            { label: "Preguntas", href: "#preguntas" },
             { label: "Descarga", href: "#descarga" },
           ].map((item) => (
             <a
@@ -110,8 +112,10 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-white border-t border-[#EEF2F7] px-4 py-5 flex flex-col gap-4">
           {[
+            { label: "El problema", href: "#problema" },
             { label: "Funciones", href: "#funciones" },
-            { label: "Preview", href: "#preview" },
+            { label: "Planes", href: "#planes" },
+            { label: "Preguntas", href: "#preguntas" },
             { label: "Descarga", href: "#descarga" },
           ].map((item) => (
             <a

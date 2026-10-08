@@ -49,9 +49,9 @@ const features = [
         <path d="M12 6v6l4 2" />
       </svg>
     ),
-    title: "Conversión PEN/USD en tiempo real",
+    title: "Tus cobros en dólares, en soles",
     description:
-      "Ve exactamente cuánto pagas en soles usando el tipo de cambio del Banco de la Nación, actualizado al minuto.",
+      "Conoce cuánto pagarás en soles por tus suscripciones en dólares, con una cotización que indica su fecha de actualización.",
     color: "#38BDF8",
     delay: "delay-3",
   },

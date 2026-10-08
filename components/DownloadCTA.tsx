@@ -50,7 +50,7 @@ export default function DownloadCTA() {
         {/* Trust signals — horizontal, subdued */}
         <div className="flex flex-col sm:flex-row gap-5 mt-16 pt-16 border-t border-white/8">
           {[
-            { label: "Datos locales, sin servidores externos" },
+            { label: "Sin conectar tu cuenta bancaria" },
             { label: "Plan gratis siempre disponible" },
             { label: "Hecho para el mercado peruano" },
           ].map((item) => (
