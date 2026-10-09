@@ -31,6 +31,7 @@
     "titleHighlight": "don't warn you.",
     "titleTail": "CraveWallet does.",
     "body": "Bring Spotify, Netflix, Smart Fit and all your recurring expenses together. Get alerts 24 hours before every charge. Convert USD to soles with the Banco de la Nación exchange rate.",
+    "phoneAlt": "CraveWallet home screen showing monthly spending and upcoming charges",
     "ctaPrimary": "Download free",
     "ctaSecondary": "See the problem",
     "stats": [
@@ -118,9 +119,9 @@
     "title": "Designed to be understood",
     "titleMuted": "at a glance.",
     "screens": [
-      { "title": "Dashboard", "description": "This month's spending and upcoming charges at a glance." },
-      { "title": "Alerts", "description": "Notifications before every renewal, with a direct action." },
-      { "title": "Exchange rate", "description": "Your dollar subscriptions, converted to soles instantly." }
+      { "title": "Home", "description": "Monthly spending and upcoming charges at a glance." },
+      { "title": "Reminders", "description": "Set alerts before each renewal." },
+      { "title": "Analysis", "description": "Track monthly spending and trends in soles." }
     ],
     "toneTitle": "How CraveWallet talks to you"
   },

@@ -31,6 +31,7 @@
     "titleHighlight": "no avisan.",
     "titleTail": "CraveWallet sí.",
     "body": "Centraliza Spotify, Netflix, Smart Fit y todos tus gastos recurrentes. Recibe alertas 24 horas antes de cada cobro. Convierte USD a soles con el tipo de cambio del Banco de la Nación.",
+    "phoneAlt": "Inicio de CraveWallet con gasto mensual y próximos cobros",
     "ctaPrimary": "Descargar gratis",
     "ctaSecondary": "Ver el problema",
     "stats": [
@@ -118,9 +119,9 @@
     "title": "Diseñado para entenderse",
     "titleMuted": "a primera vista.",
     "screens": [
-      { "title": "Dashboard", "description": "Gastos del mes y próximos cobros de un vistazo." },
-      { "title": "Alertas", "description": "Notificaciones antes de cada renovación con acción directa." },
-      { "title": "Tipo de cambio", "description": "Tus suscripciones en dólares, convertidas a soles al instante." }
+      { "title": "Inicio", "description": "Tu gasto y próximos cobros de un vistazo." },
+      { "title": "Recordatorios", "description": "Configura avisos antes de cada renovación." },
+      { "title": "Análisis", "description": "Consulta tu gasto mensual y su evolución en soles." }
     ],
     "toneTitle": "Cómo te habla CraveWallet"
   },

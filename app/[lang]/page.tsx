@@ -20,10 +20,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
     <>
       <Navbar lang={lang} dict={dict.nav} />
       <main>
-        <Hero dict={dict.hero} phone={dict.phone} />          {/* #hero     — dark  */}
+        <Hero dict={dict.hero} />                             {/* #hero     — dark  */}
         <Problem lang={lang} dict={dict.problem} />           {/* #problem  — dark  */}
         <Features dict={dict.features} />                     {/* #solution — white */}
-        <AppPreview dict={dict.preview} tone={dict.tone} phone={dict.phone} /> {/* #preview — light */}
+        <AppPreview dict={dict.preview} tone={dict.tone} />    {/* #preview — light */}
         <SocialProof dict={dict.social} tone={dict.tone} />   {/*           — light */}
         <Premium dict={dict.premium} />                       {/* #premium  — surface-variant */}
         <DownloadCTA dict={dict.download} />                  {/* #download — dark  */}

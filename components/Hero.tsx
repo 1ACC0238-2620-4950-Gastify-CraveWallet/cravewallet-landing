@@ -1,7 +1,7 @@
 import type { Dictionary } from "@/lib/i18n";
 import PhoneMockup from "./PhoneMockup";
 
-export default function Hero({ dict, phone }: { dict: Dictionary["hero"]; phone: Dictionary["phone"] }) {
+export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
   return (
     <section
       id="hero"
@@ -90,7 +90,7 @@ export default function Hero({ dict, phone }: { dict: Dictionary["hero"]; phone:
 
           {/* Right — phone */}
           <div className="flex justify-center md:justify-end items-center">
-            <PhoneMockup variant="hero" screen="dashboard" dict={phone} />
+            <PhoneMockup variant="hero" screen="home" alt={dict.phoneAlt} />
           </div>
         </div>
       </div>

@@ -2,9 +2,9 @@ import type { Dictionary } from "@/lib/i18n";
 import PhoneMockup from "./PhoneMockup";
 
 const screens = [
-  { screen: "dashboard" as const, label: "01" },
-  { screen: "alerts" as const, label: "02" },
-  { screen: "exchange" as const, label: "03" },
+  { screen: "home" as const, label: "01" },
+  { screen: "reminders" as const, label: "02" },
+  { screen: "analysis" as const, label: "03" },
 ];
 
 const TONE_COLORS = ["var(--color-accent)", "var(--color-success)", "var(--color-info)"];
@@ -12,11 +12,9 @@ const TONE_COLORS = ["var(--color-accent)", "var(--color-success)", "var(--color
 export default function AppPreview({
   dict,
   tone,
-  phone,
 }: {
   dict: Dictionary["preview"];
   tone: Dictionary["tone"];
-  phone: Dictionary["phone"];
 }) {
   return (
     <section id="preview" className="py-[var(--space-8)] md:py-[var(--space-10)] bg-background overflow-hidden">
@@ -38,7 +36,7 @@ export default function AppPreview({
         </div>
 
         {/* Phones — center lifts slightly */}
-        <div className="flex flex-col md:flex-row gap-[var(--space-8)] md:gap-[var(--space-5)] items-end justify-center">
+        <div className="flex flex-col md:flex-row gap-[var(--space-8)] md:gap-[var(--space-5)] items-center md:items-end justify-center">
           {screens.map((s, i) => (
             <div
               key={s.screen}
@@ -46,7 +44,11 @@ export default function AppPreview({
                 i === 1 ? "md:-translate-y-10" : ""
               }`}
             >
-              <PhoneMockup variant="preview" screen={s.screen} dict={phone} />
+              <PhoneMockup
+                variant="preview"
+                screen={s.screen}
+                alt={`${dict.screens[i].title}: ${dict.screens[i].description}`}
+              />
               <div className="text-center">
                 <p className="text-on-surface-variant text-xs font-medium mb-[var(--space-1)]">{s.label}</p>
                 <p className="font-display font-semibold text-on-surface text-[15px]">
