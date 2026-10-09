@@ -1,87 +1,114 @@
+import type { Dictionary } from "@/lib/i18n";
+
 type Props = {
   variant?: "hero" | "preview";
   screen?: "dashboard" | "alerts" | "exchange";
+  dict: Dictionary["phone"];
 };
 
-/* All screens are designed at 360×760px and scaled down via CSS.
-   This gives us readable font sizes instead of 6px micro-text. */
+type PhoneDict = Dictionary["phone"];
 
-function DashboardScreen() {
+function DashboardScreen({ dict }: { dict: PhoneDict }) {
+  const t = dict.dashboard;
   return (
-    <div className="w-full h-full bg-[#F8FAFC] flex flex-col">
+    <div className="w-full h-full bg-background flex flex-col">
       {/* Status bar */}
       <div className="flex items-center justify-between px-6 pt-4 pb-2">
-        <span className="text-[13px] font-semibold text-[#0F172A]">9:41</span>
-        <div className="flex items-center gap-1">
-          <div className="w-4 h-2.5 border border-[#0F172A] rounded-[3px] relative">
-            <div className="absolute inset-[1.5px] right-auto w-2/3 bg-[#22C55E] rounded-[1px]" />
-          </div>
+        <span className="text-[13px] font-semibold text-on-surface">9:41</span>
+        <div className="w-4 h-2.5 border border-on-surface rounded-[3px] relative">
+          <div className="absolute inset-[1.5px] right-auto w-2/3 bg-success rounded-[1px]" />
         </div>
       </div>
 
       {/* Greeting */}
       <div className="flex items-center justify-between px-6 pt-2 pb-4">
         <div>
-          <p className="text-[14px] text-[#64748B]">Buenos días 👋</p>
-          <p className="text-[20px] font-semibold text-[#0F172A] leading-tight">
-            Hola, Mario
+          <p className="text-[14px] text-on-surface-variant">{t.greeting}</p>
+          <p className="text-[20px] font-semibold text-on-surface leading-tight">
+            {t.hello}
           </p>
         </div>
-        <div className="w-10 h-10 rounded-full bg-[#3B4FD8] flex items-center justify-center text-white text-[16px] font-bold">
+        <div
+          className="w-10 h-10 bg-primary flex items-center justify-center text-on-primary text-[16px] font-bold"
+          style={{ borderRadius: "var(--radius-xl)" }}
+        >
           M
         </div>
       </div>
 
       {/* Total spend card */}
-      <div className="mx-4 bg-[#3B4FD8] rounded-2xl p-5 text-white shadow-lg">
-        <p className="text-[13px] text-white/70 mb-1">Gasto mensual total</p>
+      <div className="mx-4 bg-primary p-5 text-on-primary" style={{ borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-3)" }}>
+        <p className="text-[13px] text-on-primary/70 mb-1">{t.total}</p>
         <p className="text-[36px] font-bold leading-none tracking-tight">
           S/ 187.40
         </p>
-        <p className="text-[13px] text-white/60 mt-1">≈ USD 50.24 · hoy</p>
+        <p className="text-[13px] text-on-primary/70 mt-1">{t.approx}</p>
         <div className="flex gap-2 mt-4">
-          <div className="bg-white/15 rounded-lg px-3 py-1.5 text-[12px] font-medium">
-            12 activas
+          <div className="bg-on-primary/15 px-3 py-1.5 text-[12px] font-medium" style={{ borderRadius: "var(--radius-md)" }}>
+            {t.active}
           </div>
-          <div className="bg-[#F97316] rounded-lg px-3 py-1.5 text-[12px] font-medium">
-            2 por cobrar
+          <div className="bg-accent px-3 py-1.5 text-[12px] font-medium text-on-accent" style={{ borderRadius: "var(--radius-md)" }}>
+            {t.due}
           </div>
         </div>
       </div>
 
       {/* Upcoming payments */}
-      <p className="px-6 pt-5 pb-2 text-[14px] font-semibold text-[#0F172A]">
-        Próximos cobros
+      <p className="px-6 pt-5 pb-2 text-[14px] font-semibold text-on-surface">
+        {t.upcoming}
       </p>
 
       <div className="px-4 flex flex-col gap-2">
         {[
-          { name: "Spotify", sub: "Música", amount: "S/ 17.90", badge: "Mañana", badgeColor: "#F97316", badgeBg: "#FFF0E0" },
-          { name: "Netflix", sub: "Streaming", amount: "S/ 43.90", badge: "En 3 días", badgeColor: "#FBBF24", badgeBg: "#FFFBEB" },
-          { name: "Adobe CC", sub: "Software", amount: "USD 54.99", badge: "En 7 días", badgeColor: "#64748B", badgeBg: "#F1F5F9" },
-        ].map((item) => (
+          {
+            name: "Spotify",
+            amount: "S/ 17.90",
+            badgeColor: "var(--color-accent)",
+            badgeBg: "var(--color-accent-container)",
+          },
+          {
+            name: "Netflix",
+            amount: "S/ 43.90",
+            badgeColor: "var(--color-warning)",
+            badgeBg: "rgba(251,191,36,0.12)",
+          },
+          {
+            name: "Adobe CC",
+            amount: "USD 54.99",
+            badgeColor: "var(--color-on-surface-variant)",
+            badgeBg: "var(--color-surface-variant)",
+          },
+        ].map((item, i) => (
           <div
             key={item.name}
-            className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm"
+            className="flex items-center bg-surface px-4 py-3"
+            style={{ borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-1)" }}
           >
-            <div className="w-9 h-9 rounded-xl bg-[#EEF2F7] flex items-center justify-center text-[14px] font-bold text-[#3B4FD8] mr-3">
+            <div
+              className="w-9 h-9 bg-surface-variant flex items-center justify-center text-[14px] font-bold text-primary mr-3"
+              style={{ borderRadius: "var(--radius-lg)" }}
+            >
               {item.name[0]}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-[14px] font-medium text-[#0F172A] leading-none mb-0.5">
+              <p className="text-[14px] font-medium text-on-surface leading-none mb-0.5">
                 {item.name}
               </p>
-              <p className="text-[12px] text-[#64748B]">{item.sub}</p>
+              <p className="text-[12px] text-on-surface-variant">{t.items[i].sub}</p>
             </div>
             <div className="text-right">
-              <p className="text-[14px] font-semibold text-[#0F172A] leading-none mb-0.5">
+              <p className="text-[14px] font-semibold text-on-surface leading-none mb-0.5">
                 {item.amount}
               </p>
               <span
-                className="text-[11px] font-medium px-2 py-0.5 rounded-full"
-                style={{ color: item.badgeColor, backgroundColor: item.badgeBg }}
+                className="text-[11px] font-medium px-2 py-0.5"
+                style={{
+                  color: item.badgeColor,
+                  backgroundColor: item.badgeBg,
+                  borderRadius: "var(--radius-sm)",
+                }}
               >
-                {item.badge}
+                {t.items[i].badge}
               </span>
             </div>
           </div>
@@ -91,60 +118,83 @@ function DashboardScreen() {
   );
 }
 
-function AlertsScreen() {
+function AlertsScreen({ dict }: { dict: PhoneDict }) {
+  const t = dict.alerts;
   return (
-    <div className="w-full h-full bg-[#F8FAFC] flex flex-col">
+    <div className="w-full h-full bg-background flex flex-col">
       <div className="flex items-center justify-between px-6 pt-4 pb-2">
-        <span className="text-[13px] font-semibold text-[#0F172A]">9:41</span>
-        <div className="w-4 h-2.5 border border-[#0F172A] rounded-[3px] relative">
-          <div className="absolute inset-[1.5px] right-auto w-2/3 bg-[#22C55E] rounded-[1px]" />
+        <span className="text-[13px] font-semibold text-on-surface">9:41</span>
+        <div className="w-4 h-2.5 border border-on-surface rounded-[3px] relative">
+          <div className="absolute inset-[1.5px] right-auto w-2/3 bg-success rounded-[1px]" />
         </div>
       </div>
 
       <div className="px-6 pt-2 pb-5">
-        <p className="text-[20px] font-semibold text-[#0F172A]">Alertas</p>
-        <p className="text-[13px] text-[#64748B]">3 sin leer</p>
+        <p className="text-[20px] font-semibold text-on-surface">{t.title}</p>
+        <p className="text-[13px] text-on-surface-variant">{t.unread}</p>
       </div>
 
       {/* Featured alert */}
-      <div className="mx-4 bg-[#FFF0E0] border border-[#F97316]/30 rounded-2xl p-5">
+      <div
+        className="mx-4 bg-accent-container p-5"
+        style={{ borderRadius: "var(--radius-lg)", border: "1px solid rgba(249,115,22,0.3)" }}
+      >
         <div className="flex items-center gap-2 mb-3">
-          <div className="w-6 h-6 rounded-full bg-[#F97316] flex items-center justify-center">
+          <div
+            className="w-6 h-6 bg-accent flex items-center justify-center"
+            style={{ borderRadius: "var(--radius-xl)" }}
+          >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="white">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
             </svg>
           </div>
-          <p className="text-[13px] font-semibold text-[#F97316]">Cobro mañana</p>
+          <p className="text-[13px] font-semibold text-accent">{t.due}</p>
         </div>
-        <p className="text-[18px] font-semibold text-[#0F172A] leading-snug mb-1">
-          Mañana te cobran Spotify
+        <p className="text-[18px] font-semibold text-on-surface leading-snug mb-1">
+          {t.headline}
         </p>
-        <p className="text-[32px] font-bold text-[#0F172A] leading-none mb-3">
+        <p className="text-[32px] font-bold text-on-surface leading-none mb-3">
           S/ 17.90
         </p>
-        <p className="text-[13px] text-[#64748B] mb-4">¿Lo dejamos pasar?</p>
+        <p className="text-[13px] text-on-surface-variant mb-4">{t.question}</p>
         <div className="flex gap-2">
-          <div className="flex-1 bg-[#F97316] text-white text-[13px] font-semibold text-center py-2.5 rounded-xl">
-            Cancelar
+          <div
+            className="flex-1 bg-accent text-on-accent text-[13px] font-semibold text-center py-2.5"
+            style={{ borderRadius: "var(--radius-md)" }}
+          >
+            {t.cancel}
           </div>
-          <div className="flex-1 bg-white text-[#0F172A] text-[13px] font-medium text-center py-2.5 rounded-xl border border-[#EEF2F7]">
-            Renovar
+          <div
+            className="flex-1 bg-surface text-on-surface text-[13px] font-medium text-center py-2.5 border border-surface-variant"
+            style={{ borderRadius: "var(--radius-md)" }}
+          >
+            {t.renew}
           </div>
         </div>
       </div>
 
       <div className="px-4 flex flex-col gap-2 mt-3">
         {[
-          { title: "¡Cancelaste Dropbox!", body: "USD 9.99 vuelven a tu bolsillo.", color: "#22C55E", bg: "#F0FDF4" },
-          { title: "Netflix se renueva en 3 días", body: "S/ 43.90 — 28 sep", color: "#FBBF24", bg: "#FFFBEB" },
-        ].map((a) => (
+          {
+            color: "var(--color-success)",
+            bg: "rgba(34,197,94,0.10)",
+          },
+          {
+            color: "var(--color-warning)",
+            bg: "rgba(251,191,36,0.12)",
+          },
+        ].map((a, i) => (
           <div
-            key={a.title}
-            className="bg-white rounded-xl px-4 py-3 border-l-4 shadow-sm"
-            style={{ borderColor: a.color }}
+            key={t.items[i].title}
+            className="bg-surface px-4 py-3 border-l-4"
+            style={{
+              borderColor: a.color,
+              borderRadius: "var(--radius-lg)",
+              boxShadow: "var(--shadow-1)",
+            }}
           >
-            <p className="text-[14px] font-semibold text-[#0F172A]">{a.title}</p>
-            <p className="text-[12px] text-[#64748B] mt-0.5">{a.body}</p>
+            <p className="text-[14px] font-semibold text-on-surface">{t.items[i].title}</p>
+            <p className="text-[12px] text-on-surface-variant mt-0.5">{t.items[i].body}</p>
           </div>
         ))}
       </div>
@@ -152,55 +202,66 @@ function AlertsScreen() {
   );
 }
 
-function ExchangeScreen() {
+function ExchangeScreen({ dict }: { dict: PhoneDict }) {
+  const t = dict.exchange;
   return (
-    <div className="w-full h-full bg-[#F8FAFC] flex flex-col">
+    <div className="w-full h-full bg-background flex flex-col">
       <div className="flex items-center justify-between px-6 pt-4 pb-2">
-        <span className="text-[13px] font-semibold text-[#0F172A]">9:41</span>
-        <div className="w-4 h-2.5 border border-[#0F172A] rounded-[3px] relative">
-          <div className="absolute inset-[1.5px] right-auto w-2/3 bg-[#22C55E] rounded-[1px]" />
+        <span className="text-[13px] font-semibold text-on-surface">9:41</span>
+        <div className="w-4 h-2.5 border border-on-surface rounded-[3px] relative">
+          <div className="absolute inset-[1.5px] right-auto w-2/3 bg-success rounded-[1px]" />
         </div>
       </div>
 
       <div className="px-6 pt-2 pb-4">
-        <p className="text-[20px] font-semibold text-[#0F172A]">Tipo de cambio</p>
+        <p className="text-[20px] font-semibold text-on-surface">{t.title}</p>
       </div>
 
       {/* Exchange rate card */}
-      <div className="mx-4 bg-[#0F172A] rounded-2xl p-5 text-white">
-        <p className="text-[13px] text-white/60 mb-1">Banco de la Nación · hace 2 min</p>
-        <p className="text-[13px] text-white/70 mb-2">USD 1.00 equivale a</p>
+      <div className="mx-4 bg-inverse-surface p-5 text-white" style={{ borderRadius: "var(--radius-lg)" }}>
+        <p className="text-[13px] text-white/60 mb-1">{t.source}</p>
+        <p className="text-[13px] text-white/70 mb-2">{t.equals}</p>
         <p className="text-[44px] font-bold leading-none">S/ 3.74</p>
         <div className="flex items-center gap-1.5 mt-3">
-          <div className="w-4 h-4 rounded-full bg-[#22C55E]/20 flex items-center justify-center">
-            <svg width="8" height="8" viewBox="0 0 12 12" fill="#22C55E">
+          <div
+            className="w-4 h-4 flex items-center justify-center"
+            style={{ borderRadius: "var(--radius-xl)", backgroundColor: "rgba(34,197,94,0.2)" }}
+          >
+            <svg width="8" height="8" viewBox="0 0 12 12" fill="var(--color-success)">
               <path d="M6 2L9 6H3z"/>
             </svg>
           </div>
-          <p className="text-[12px] text-[#22C55E]">+0.03 vs ayer</p>
+          <p className="text-[12px] text-success">{t.delta}</p>
         </div>
       </div>
 
       {/* Conversion list */}
-      <p className="px-6 pt-5 pb-2 text-[14px] font-semibold text-[#0F172A]">
-        Tus suscripciones en PEN
+      <p className="px-6 pt-5 pb-2 text-[14px] font-semibold text-on-surface">
+        {t.list}
       </p>
       <div className="px-4 flex flex-col gap-2">
         {[
-          { name: "Netflix", usd: "USD 8.99", pen: "S/ 33.64" },
-          { name: "Spotify", usd: "USD 4.99", pen: "S/ 18.67" },
-          { name: "Adobe CC", usd: "USD 54.99", pen: "S/ 205.66" },
+          { name: "Netflix",   usd: "USD 8.99",  pen: "S/ 33.64" },
+          { name: "Spotify",   usd: "USD 4.99",  pen: "S/ 18.67" },
+          { name: "Adobe CC",  usd: "USD 54.99", pen: "S/ 205.66" },
           { name: "Canva Pro", usd: "USD 12.99", pen: "S/ 48.58" },
         ].map((s) => (
-          <div key={s.name} className="flex items-center bg-white rounded-xl px-4 py-3 shadow-sm">
-            <div className="w-9 h-9 rounded-xl bg-[#EEF2F7] flex items-center justify-center text-[14px] font-bold text-[#3B4FD8] mr-3">
+          <div
+            key={s.name}
+            className="flex items-center bg-surface px-4 py-3"
+            style={{ borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-1)" }}
+          >
+            <div
+              className="w-9 h-9 bg-surface-variant flex items-center justify-center text-[14px] font-bold text-primary mr-3"
+              style={{ borderRadius: "var(--radius-lg)" }}
+            >
               {s.name[0]}
             </div>
             <div className="flex-1">
-              <p className="text-[14px] font-medium text-[#0F172A]">{s.name}</p>
-              <p className="text-[12px] text-[#64748B]">{s.usd}</p>
+              <p className="text-[14px] font-medium text-on-surface">{s.name}</p>
+              <p className="text-[12px] text-on-surface-variant">{s.usd}</p>
             </div>
-            <p className="text-[14px] font-semibold text-[#0F172A]">{s.pen}</p>
+            <p className="text-[14px] font-semibold text-on-surface">{s.pen}</p>
           </div>
         ))}
       </div>
@@ -217,10 +278,10 @@ const screens = {
 export default function PhoneMockup({
   variant = "hero",
   screen = "dashboard",
+  dict,
 }: Props) {
   const Screen = screens[screen];
 
-  /* Design at 360×760, scale to fit displayed size */
   const designW = 360;
   const designH = 760;
   const displayW = variant === "hero" ? 260 : 210;
@@ -229,26 +290,42 @@ export default function PhoneMockup({
 
   return (
     <div className="relative" style={{ width: displayW }}>
-      {/* Ambient glow — single, intentional */}
+      {/* Ambient glow */}
       <div
         className="absolute -inset-8 rounded-full blur-3xl"
         style={{ background: "radial-gradient(ellipse, rgba(59,79,216,0.25) 0%, transparent 70%)" }}
       />
 
       {/* Phone frame */}
-      <div className="relative rounded-[calc(32px*var(--s))] bg-[#18181B] p-[calc(8px*var(--s))] shadow-2xl border border-white/10"
-        style={{ "--s": scale } as React.CSSProperties}
+      <div
+        className="relative p-[calc(8px*var(--s))] border border-white/10"
+        style={{
+          "--s": scale,
+          borderRadius: `calc(32px * ${scale})`,
+          backgroundColor: "var(--color-inverse-surface)",
+          boxShadow: "var(--shadow-6)",
+        } as React.CSSProperties}
       >
-        <div className="rounded-[calc(26px*var(--s))] overflow-hidden bg-[#0F172A]">
+        <div
+          className="overflow-hidden"
+          style={{
+            borderRadius: `calc(26px * ${scale})`,
+            backgroundColor: "var(--color-inverse-surface)",
+          }}
+        >
           {/* Dynamic Island */}
           <div className="flex justify-center" style={{ paddingTop: `${12 * scale}px`, paddingBottom: `${4 * scale}px` }}>
             <div
-              className="bg-[#18181B] rounded-full"
-              style={{ width: 80 * scale, height: 10 * scale }}
+              style={{
+                width: 80 * scale,
+                height: 10 * scale,
+                borderRadius: 999,
+                backgroundColor: "rgba(0,0,0,0.7)",
+              }}
             />
           </div>
 
-          {/* Screen — scales from full design size */}
+          {/* Screen */}
           <div style={{ width: displayW, height: displayH, overflow: "hidden" }}>
             <div
               style={{
@@ -258,15 +335,15 @@ export default function PhoneMockup({
                 transformOrigin: "top left",
               }}
             >
-              <Screen />
+              <Screen dict={dict} />
             </div>
           </div>
 
           {/* Home indicator */}
           <div className="flex justify-center" style={{ paddingTop: `${6 * scale}px`, paddingBottom: `${8 * scale}px` }}>
             <div
-              className="bg-white/25 rounded-full"
-              style={{ width: 80 * scale, height: 4 * scale }}
+              className="bg-white/25"
+              style={{ width: 80 * scale, height: 4 * scale, borderRadius: 999 }}
             />
           </div>
         </div>

@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "title": "CraveWallet — Controla tus suscripciones y gastos en soles | Gastify",
+    "description": "CraveWallet reúne todas tus suscripciones, membresías y gastos de delivery en un solo lugar. Recibe alertas 24 horas antes de cada cobro y conoce cuánto gastas realmente en soles. Gratis para Android.",
+    "keywords": "gestor de suscripciones, control de gastos, suscripciones Peru, Smart Fit, Netflix, Spotify, PedidosYa, gastos recurrentes, membresías, presupuesto universitarios, finanzas personales Peru, tipo de cambio dolar soles",
+    "ogTitle": "CraveWallet — Deja de pagar por lo que no usas",
+    "ogDescription": "Centraliza tus suscripciones, recibe alertas de cobro y convierte todo a soles automáticamente. Diseñado para universitarios y profesionales jóvenes en Lima.",
+    "ogImageAlt": "CraveWallet — Gestor de suscripciones",
+    "ogLocale": "es_PE",
+    "twitterTitle": "CraveWallet — Controla tus suscripciones en soles",
+    "twitterDescription": "¿Cuántas suscripciones pagas sin darte cuenta? CraveWallet te lo dice y te avisa antes de cada cobro.",
+    "appDescription": "Gestor de suscripciones y gastos recurrentes para universitarios y profesionales jóvenes en Perú."
+  },
+  "nav": {
+    "links": [
+      { "label": "Inicio", "href": "#hero" },
+      { "label": "El problema", "href": "#problem" },
+      { "label": "Solución", "href": "#solution" },
+      { "label": "Descarga", "href": "#download" },
+      { "label": "Premium", "href": "#premium" }
+    ],
+    "cta": "Descargar gratis",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "toggleTheme": "Cambiar entre modo claro y oscuro",
+    "switchLanguage": "Ver el sitio en inglés"
+  },
+  "hero": {
+    "badge": "Gastify · Disponible para Android",
+    "title": ["Los cobros", "automáticos"],
+    "titleHighlight": "no avisan.",
+    "titleTail": "CraveWallet sí.",
+    "body": "Centraliza Spotify, Netflix, Smart Fit y todos tus gastos recurrentes. Recibe alertas 24 horas antes de cada cobro. Convierte USD a soles con el tipo de cambio del Banco de la Nación.",
+    "ctaPrimary": "Descargar gratis",
+    "ctaSecondary": "Ver el problema",
+    "stats": [
+      { "value": "4 – 8", "label": "suscripciones activas por usuario" },
+      { "value": "S/ → $", "label": "conversión en tiempo real" },
+      { "value": "−24h", "label": "alerta antes de cada cobro" }
+    ]
+  },
+  "problem": {
+    "eyebrow": "El problema",
+    "title": ["¿Sabes cuánto gastaste en", "suscripciones este mes?"],
+    "body": "Spotify un día, Adobe otro, Smart Fit el siguiente. Los cobros automáticos se acumulan y nadie los suma — hasta que ves el estado de cuenta y ya es tarde.",
+    "stats": [
+      {
+        "target": 2,
+        "prefix": "",
+        "suffix": " meses",
+        "label": "para descubrir un cobro",
+        "sublabel": "olvidado, al revisar el banco",
+        "source": "Entrevistas Cap. II, n = 6"
+      },
+      {
+        "target": 41,
+        "prefix": "",
+        "suffix": "%",
+        "label": "bajo el nivel mínimo",
+        "sublabel": "de educación financiera en el Perú",
+        "source": "SBS, encuesta 2022"
+      },
+      {
+        "target": 100,
+        "prefix": "",
+        "suffix": "%",
+        "label": "vivió un cobro olvidado",
+        "sublabel": "en ambos segmentos entrevistados por Gastify",
+        "source": "Entrevistas Cap. II, n = 6"
+      }
+    ],
+    "stories": [
+      {
+        "quote": "Mantuvo PedidosYa por una promo, la olvidó y fue cobrado 2 meses seguidos. Se enteró por casualidad revisando el banco.",
+        "person": "Darío, 20 · Surquillo"
+      },
+      {
+        "quote": "Smart Fit le cobró 2 meses que no fue al gimnasio. Sin aviso previo. Solo lo vio en el detalle bancario.",
+        "person": "Eduardo, 19 · Ate"
+      },
+      {
+        "quote": "LinkedIn Premium le cobró ~$40 por 3 meses después de conseguir trabajo. Lo descubrió en el estado de cuenta mensual.",
+        "person": "Leonardo, 30 · Lince"
+      }
+    ],
+    "servicesTitle": "Servicios que se acumulan sin que te des cuenta"
+  },
+  "features": {
+    "eyebrow": "Solución",
+    "title": "Todo lo que necesitas.",
+    "titleMuted": "Nada de lo que no.",
+    "items": [
+      {
+        "title": "Centraliza todo en un lugar",
+        "description": "Agrega Netflix, Spotify, Adobe, Smart Fit y cualquier gasto recurrente. Todo organizado por categoría y fecha de cobro."
+      },
+      {
+        "title": "Alertas 24h antes de cada cobro",
+        "description": "Notificación antes de cada renovación automática. Tiempo suficiente para decidir si cancelar antes de que impacte tu cuenta."
+      },
+      {
+        "title": "Detecta lo que no usas",
+        "description": "Marca automáticamente las suscripciones sin actividad en los últimos 30 días. Cancela lo que no aporta, ahorra lo que importa."
+      },
+      {
+        "title": "Conversión PEN/USD en tiempo real",
+        "description": "Cuánto pagas en soles, exactamente, usando el tipo de cambio del Banco de la Nación. Actualizado al minuto."
+      }
+    ]
+  },
+  "tone": [
+    "Mañana te cobran Spotify — S/ 17.90. ¿Lo dejamos pasar?",
+    "¡Cancelaste Dropbox! Eso son USD 9.99 que vuelven a tu bolsillo cada mes.",
+    "Sin conexión. Revisamos el tipo de cambio en cuanto vuelvas a estar en línea."
+  ],
+  "preview": {
+    "eyebrow": "Preview",
+    "title": "Diseñado para entenderse",
+    "titleMuted": "a primera vista.",
+    "screens": [
+      { "title": "Dashboard", "description": "Gastos del mes y próximos cobros de un vistazo." },
+      { "title": "Alertas", "description": "Notificaciones antes de cada renovación con acción directa." },
+      { "title": "Tipo de cambio", "description": "Tus suscripciones en dólares, convertidas a soles al instante." }
+    ],
+    "toneTitle": "Cómo te habla CraveWallet"
+  },
+  "social": {
+    "eyebrow": "Investigación de usuarios",
+    "title": "Historias reales.",
+    "titleMuted": "El mismo problema.",
+    "body": "Entrevistas realizadas por el equipo de Gastify a jóvenes de Lima (septiembre 2026). El 100 % vivió al menos un cobro automático olvidado. El 100 % tiene suscripciones en dólares sin saber su equivalente en soles.",
+    "testimonials": [
+      {
+        "quote": "Mantenía PedidosYa activa por una promo que ya había vencido. Me cobraron 2 meses seguidos y me enteré por casualidad revisando el banco. Un aviso de 24h lo habría cortado antes del primer descuento.",
+        "role": "20 años · Estudiante, Surquillo",
+        "segment": "Segmento 1"
+      },
+      {
+        "quote": "Smart Fit me cobró 2 meses sin ir al gym, cero notificación. ChatGPT y Amazon los pago en dólares y nunca supe cuánto en soles hasta que bajó la línea de mi tarjeta. Eso tiene que resolverse.",
+        "role": "19 años · Estudiante trabajador, Ate",
+        "segment": "Segmento 1"
+      },
+      {
+        "quote": "LinkedIn Premium me cobró ~$40 tres meses seguidos después de que conseguí el trabajo y olvidé cancelarlo. Solo lo vi en el estado de cuenta. Un aviso 24h antes me habría ahorrado el problema.",
+        "role": "30 años · Ing. Industrial, Lince",
+        "segment": "Segmento 2"
+      }
+    ],
+    "findingsTitle": "Hallazgos transversales — ambos segmentos (n = 6)",
+    "findingsValue": "100 %",
+    "findings": [
+      "no recibe hoy ninguna alerta anticipada de cobro — se enteran siempre revisando el banco.",
+      "tiene al menos una suscripción en dólares sin saber su equivalente en soles hasta el cargo.",
+      "relató un episodio concreto de cobro automático olvidado, detectado entre 1 y 3 meses después."
+    ],
+    "toneTitle": "Así te habla CraveWallet · Tono de comunicación (Cap. III, §3.1.1.1)"
+  },
+  "premium": {
+    "eyebrow": "Planes",
+    "title": "Gratis para siempre.",
+    "titleMuted": "Premium cuando lo necesites.",
+    "free": {
+      "name": "Básico",
+      "tagline": "Para empezar sin compromisos",
+      "price": "Gratis",
+      "period": "Para siempre",
+      "items": [
+        "Hasta 5 suscripciones registradas",
+        "Alertas 24h antes de cada cobro",
+        "Conversión PEN/USD en tiempo real",
+        "Historial de los últimos 30 días",
+        "Categorías de gasto predefinidas"
+      ],
+      "cta": "Descargar gratis"
+    },
+    "pro": {
+      "badge": "Próximamente",
+      "name": "Premium",
+      "tagline": "Para usuarios que quieren más control",
+      "price": "S/ 9.99",
+      "period": "por mes",
+      "items": [
+        "Suscripciones ilimitadas",
+        "Análisis de gastos por categoría",
+        "Presupuesto mensual personalizable",
+        "Exportar datos en Excel / PDF",
+        "Detección de suscripciones inactivas",
+        "Sin publicidad",
+        "Soporte prioritario"
+      ],
+      "cta": "Disponible pronto"
+    }
+  },
+  "download": {
+    "eyebrow": "Descarga gratis",
+    "title": "Empieza hoy.",
+    "titleMuted": "Tu bolsillo",
+    "titleTail": "te lo agradece.",
+    "body": "Plan básico gratis para siempre. Sin tarjeta de crédito ni compromisos. Disponible para Android.",
+    "cta": "Descargar en Android",
+    "requirement": "Requiere Android 8.0 o superior",
+    "trust": [
+      "Sin conectar tu banco",
+      "Plan gratis siempre disponible",
+      "Hecho para el mercado peruano"
+    ]
+  },
+  "footer": {
+    "links": [
+      { "label": "El problema", "href": "#problem" },
+      { "label": "Solución", "href": "#solution" },
+      { "label": "Preview", "href": "#preview" },
+      { "label": "Descarga", "href": "#download" },
+      { "label": "Premium", "href": "#premium" }
+    ],
+    "tagline": "Empoderamiento financiero para nativos digitales peruanos.",
+    "by": "by Gastify",
+    "credits": "Proyecto universitario — UPC · Ingeniería de Software",
+    "designSystem": "Design System v1.0 · Material Design 3"
+  },
+  "phone": {
+    "dashboard": {
+      "greeting": "Buenos días 👋",
+      "hello": "Hola, Mario",
+      "total": "Gasto mensual total",
+      "approx": "≈ USD 50.24 · hoy",
+      "active": "12 activas",
+      "due": "2 por cobrar",
+      "upcoming": "Próximos cobros",
+      "items": [
+        { "sub": "Música", "badge": "Mañana" },
+        { "sub": "Streaming", "badge": "En 3 días" },
+        { "sub": "Software", "badge": "En 7 días" }
+      ]
+    },
+    "alerts": {
+      "title": "Alertas",
+      "unread": "3 sin leer",
+      "due": "Cobro mañana",
+      "headline": "Mañana te cobran Spotify",
+      "question": "¿Lo dejamos pasar?",
+      "cancel": "Cancelar",
+      "renew": "Renovar",
+      "items": [
+        { "title": "¡Cancelaste Dropbox!", "body": "USD 9.99 vuelven a tu bolsillo." },
+        { "title": "Netflix se renueva en 3 días", "body": "S/ 43.90 — 28 sep" }
+      ]
+    },
+    "exchange": {
+      "title": "Tipo de cambio",
+      "source": "Banco de la Nación · hace 2 min",
+      "equals": "USD 1.00 equivale a",
+      "delta": "+0.03 vs ayer",
+      "list": "Tus suscripciones en PEN"
+    }
+  }
+}

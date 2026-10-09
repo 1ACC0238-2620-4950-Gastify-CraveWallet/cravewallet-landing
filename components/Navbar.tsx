@@ -1,157 +1,120 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import type { Dictionary, Locale } from "@/lib/i18n";
+import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
+import LanguageSwitch from "./LanguageSwitch";
 
-const NAV_LINKS = [
-  { label: "El problema", href: "#problem" },
-  { label: "Solución", href: "#solution" },
-  { label: "Premium", href: "#premium" },
-  { label: "Descarga", href: "#descarga" },
-];
-
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+export default function Navbar({ lang, dict }: { lang: Locale; dict: Dictionary["nav"] }) {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const textColor = scrolled ? "#64748B" : "rgba(255,255,255,0.65)";
-  const textColorHover = scrolled ? "#0F172A" : "white";
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50"
+      className="sticky top-0 z-50"
       style={{
-        transition:
-          "background-color 220ms cubic-bezier(0.23,1,0.32,1), box-shadow 220ms cubic-bezier(0.23,1,0.32,1)",
-        backgroundColor: scrolled ? "rgba(255,255,255,0.94)" : "transparent",
-        backdropFilter: scrolled ? "blur(14px)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(14px)" : "none",
-        boxShadow: scrolled ? "0 1px 0 rgba(15,23,42,0.07)" : "none",
+        backgroundColor: "color-mix(in srgb, var(--color-surface) 94%, transparent)",
+        backdropFilter: "blur(14px)",
+        WebkitBackdropFilter: "blur(14px)",
+        boxShadow: "0 1px 0 color-mix(in srgb, var(--color-on-surface) 8%, transparent)",
       }}
     >
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+      <div
+        className="max-w-[var(--container-max)] mx-auto px-[var(--space-4)] md:px-[var(--space-5)] h-16 flex items-center justify-between"
+      >
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 shrink-0">
-          <div className="w-7 h-7 bg-[#3B4FD8] rounded-lg flex items-center justify-center">
-            <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-              <path
-                d="M3 6h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z"
-                fill="white"
-                fillOpacity="0.95"
-              />
-              <path
-                d="M5 6V4a4 4 0 0 1 8 0v2"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <path
-                d="M9 4L13 1"
-                stroke="#F97316"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
-          <span
-            className="font-display font-semibold text-[16px] tracking-tight"
-            style={{
-              color: scrolled ? "#0F172A" : "white",
-              transition: "color 220ms cubic-bezier(0.23,1,0.32,1)",
-            }}
-          >
+        <a href="#hero" className="flex items-center gap-[var(--space-2)] shrink-0">
+          <Logo />
+          <span className="font-display font-semibold text-base text-on-surface tracking-tight">
             CraveWallet
           </span>
         </a>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-7">
-          {NAV_LINKS.map((item) => (
+        {/* Desktop nav — visible from 960px */}
+        <nav className="hidden md:flex items-center gap-[var(--space-6)]">
+          {dict.links.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-[14px] font-medium"
-              style={{
-                color: textColor,
-                transition: "color 180ms cubic-bezier(0.23,1,0.32,1)",
-              }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.color = textColorHover)
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.color = textColor)
-              }
+              className="text-sm font-medium text-on-surface-variant hover:text-on-surface"
+              style={{ transition: "color 180ms var(--ease-out)" }}
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        {/* Primary CTA — always visible per chapter 3 */}
-        <a
-          href="#descarga"
-          className="btn hidden md:inline-flex items-center gap-1.5 bg-[#3B4FD8] text-white text-[13px] font-semibold px-4 py-2 rounded-lg hover:bg-[#2537B0]"
-        >
-          Descargar gratis
-        </a>
+        {/* Right side: CTA (from 480px), language, theme + hamburger on mobile */}
+        <div className="flex items-center gap-[var(--space-2)]">
+          <a
+            href="#download"
+            className="btn hidden min-[480px]:inline-flex items-center gap-1.5 whitespace-nowrap bg-primary text-on-primary text-sm font-semibold px-[var(--space-4)] py-[var(--space-2)] hover:bg-primary-dark"
+            style={{ borderRadius: "var(--radius-md)" }}
+          >
+            {dict.cta}
+          </a>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-[5px]"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={menuOpen}
-        >
-          {[0, 1, 2].map((i) => (
-            <span
-              key={i}
-              className="block w-5 rounded-full"
-              style={{
-                height: "1.5px",
-                backgroundColor: scrolled ? "#0F172A" : "white",
-                transition:
-                  "transform 200ms cubic-bezier(0.23,1,0.32,1), opacity 200ms",
-                transform: menuOpen
-                  ? i === 0
-                    ? "rotate(45deg) translate(4px, 4px)"
-                    : i === 2
-                    ? "rotate(-45deg) translate(4px, -4px)"
-                    : "none"
-                  : "none",
-                opacity: menuOpen && i === 1 ? 0 : 1,
-              }}
-            />
-          ))}
-        </button>
+          <LanguageSwitch lang={lang} label={dict.switchLanguage} />
+          <ThemeToggle label={dict.toggleTheme} />
+
+          {/* Hamburger — only on mobile */}
+          <button
+            className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-[var(--space-1)]"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? dict.closeMenu : dict.openMenu}
+            aria-expanded={menuOpen}
+          >
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                className="block w-5 rounded-full bg-on-surface"
+                style={{
+                  height: "1.5px",
+                  transition: "transform 200ms var(--ease-out), opacity 200ms var(--ease-out)",
+                  transform: menuOpen
+                    ? i === 0
+                      ? "rotate(45deg) translate(4px, 4px)"
+                      : i === 2
+                      ? "rotate(-45deg) translate(4px, -4px)"
+                      : "none"
+                    : "none",
+                  opacity: menuOpen && i === 1 ? 0 : 1,
+                }}
+              />
+            ))}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile drawer */}
-      {menuOpen && (
-        <div className="md:hidden bg-white/98 backdrop-blur-sm border-t border-[#EEF2F7] px-4 py-5 flex flex-col gap-1">
-          {NAV_LINKS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-[15px] font-medium text-[#64748B] hover:text-[#0F172A] py-2.5 transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+      {/* Mobile drawer — always mounted, transitions via opacity + transform */}
+      <div
+        className="md:hidden mobile-drawer border-t border-surface-variant px-[var(--space-4)] flex flex-col gap-[var(--space-1)]"
+        aria-hidden={!menuOpen}
+        style={{
+          backgroundColor: "var(--color-surface)",
+          opacity: menuOpen ? 1 : 0,
+          transform: menuOpen ? "translateY(0)" : "translateY(-6px)",
+          pointerEvents: menuOpen ? "auto" : "none",
+          paddingTop: menuOpen ? "var(--space-5)" : 0,
+          paddingBottom: menuOpen ? "var(--space-5)" : 0,
+          maxHeight: menuOpen ? "360px" : "0px",
+          overflow: "hidden",
+          transition:
+            "opacity 220ms var(--ease-out), transform 220ms var(--ease-out), max-height 280ms var(--ease-out), padding 220ms var(--ease-out)",
+        }}
+      >
+        {dict.links.map((item) => (
           <a
-            href="#descarga"
-            className="btn mt-2 bg-[#3B4FD8] text-white text-[14px] font-semibold px-4 py-3 rounded-xl text-center hover:bg-[#2537B0]"
+            key={item.href}
+            href={item.href}
+            className="text-base font-medium text-on-surface-variant hover:text-on-surface py-[var(--space-2)]"
+            style={{ transition: "color 160ms var(--ease-out)" }}
             onClick={() => setMenuOpen(false)}
           >
-            Descargar gratis
+            {item.label}
           </a>
-        </div>
-      )}
+        ))}
+      </div>
     </header>
   );
 }

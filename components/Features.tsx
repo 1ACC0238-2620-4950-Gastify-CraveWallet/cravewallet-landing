@@ -1,5 +1,6 @@
 "use client";
 import { useReveal } from "@/hooks/useReveal";
+import type { Dictionary } from "@/lib/i18n";
 
 const features = [
   {
@@ -9,10 +10,7 @@ const features = [
         <path d="M2 10h20M6 15h4M14 15h4" />
       </svg>
     ),
-    title: "Centraliza todo en un lugar",
-    description:
-      "Agrega Netflix, Spotify, Adobe, Smart Fit y cualquier gasto recurrente. Todo organizado por categoría y fecha de cobro.",
-    color: "#3B4FD8",
+    color: "var(--color-primary)",
     delay: "",
   },
   {
@@ -22,10 +20,7 @@ const features = [
         <path d="M13.73 21a2 2 0 0 1-3.46 0" />
       </svg>
     ),
-    title: "Alertas 24h antes de cada cobro",
-    description:
-      "Notificación antes de cada renovación automática. Tiempo suficiente para decidir si cancelar antes de que impacte tu cuenta.",
-    color: "#F97316",
+    color: "var(--color-accent)",
     delay: "delay-1",
   },
   {
@@ -35,10 +30,7 @@ const features = [
         <path d="M18 9l-5 5-4-4-3 3" />
       </svg>
     ),
-    title: "Detecta lo que no usas",
-    description:
-      "Marca automáticamente las suscripciones sin actividad en los últimos 30 días. Cancela lo que no aporta, ahorra lo que importa.",
-    color: "#22C55E",
+    color: "var(--color-success)",
     delay: "delay-2",
   },
   {
@@ -48,51 +40,55 @@ const features = [
         <path d="M12 6v6l4 2" />
       </svg>
     ),
-    title: "Conversión PEN/USD en tiempo real",
-    description:
-      "Cuánto pagas en soles, exactamente, usando el tipo de cambio del Banco de la Nación. Actualizado al minuto.",
-    color: "#38BDF8",
+    color: "var(--color-info)",
     delay: "delay-3",
   },
 ];
 
-export default function Features() {
+export default function Features({ dict }: { dict: Dictionary["features"] }) {
   const ref = useReveal();
 
   return (
-    <section id="solution" className="py-24 md:py-32 bg-white">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-        <div className="mb-16">
-          <p className="text-[#3B4FD8] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
-            Solución
+    <section id="solution" className="py-[var(--space-8)] md:py-[var(--space-10)] bg-surface">
+      <div className="max-w-[var(--container-max)] mx-auto px-[var(--space-4)] md:px-[var(--space-5)]">
+        <div className="mb-[var(--space-8)]">
+          <p className="text-primary text-xs font-semibold uppercase tracking-[0.12em] mb-[var(--space-4)]">
+            {dict.eyebrow}
           </p>
           <h2
-            className="font-display font-bold text-[#0F172A] leading-[1.08] max-w-lg"
+            className="font-display font-bold text-on-surface leading-[1.08] max-w-lg"
             style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
           >
-            Todo lo que necesitas.
+            {dict.title}
             <br />
-            <span className="text-[#64748B]">Nada de lo que no.</span>
+            <span className="text-on-surface-variant">{dict.titleMuted}</span>
           </h2>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {features.map((f) => (
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-[var(--space-5)]">
+          {features.map((f, i) => (
             <div
-              key={f.title}
-              className={`feature-card reveal ${f.delay} bg-white rounded-2xl p-7 border border-[#E2E8F0]`}
+              key={dict.items[i].title}
+              className={`feature-card reveal ${f.delay} bg-surface border border-surface-variant p-[var(--space-5)]`}
+              style={{ borderRadius: "var(--radius-lg)" }}
             >
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center mb-5"
-                style={{ backgroundColor: f.color + "18", color: f.color }}
+                className="w-10 h-10 flex items-center justify-center mb-[var(--space-5)]"
+                style={{
+                  borderRadius: "var(--radius-md)",
+                  backgroundColor: `color-mix(in srgb, ${f.color} 10%, transparent)`,
+                  color: f.color,
+                }}
               >
                 {f.icon}
               </div>
-              <h3 className="font-display font-semibold text-[18px] text-[#0F172A] mb-2 leading-snug">
-                {f.title}
+              <h3
+                className="font-display font-semibold text-[18px] text-on-surface mb-[var(--space-2)] leading-snug"
+              >
+                {dict.items[i].title}
               </h3>
-              <p className="text-[#64748B] text-[15px] leading-relaxed">
-                {f.description}
+              <p className="text-on-surface-variant text-[15px] leading-relaxed">
+                {dict.items[i].description}
               </p>
             </div>
           ))}

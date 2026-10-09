@@ -1,121 +1,119 @@
 "use client";
 import { useReveal } from "@/hooks/useReveal";
-
-const freeTier = [
-  "Hasta 5 suscripciones registradas",
-  "Alertas 24h antes de cada cobro",
-  "Conversión PEN/USD en tiempo real",
-  "Historial de los últimos 30 días",
-  "Categorías de gasto predefinidas",
-];
-
-const premiumTier = [
-  "Suscripciones ilimitadas",
-  "Análisis de gastos por categoría",
-  "Presupuesto mensual personalizable",
-  "Exportar datos en Excel / PDF",
-  "Detección de suscripciones inactivas",
-  "Sin publicidad",
-  "Soporte prioritario",
-];
+import type { Dictionary } from "@/lib/i18n";
 
 function Check({ color }: { color: string }) {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="shrink-0 mt-0.5">
-      <circle cx="12" cy="12" r="10" fill={color + "20"} />
+      <circle cx="12" cy="12" r="10" fill={`color-mix(in srgb, ${color} 13%, transparent)`} />
       <path d="M8 12l3 3 5-5" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-export default function Premium() {
+export default function Premium({ dict }: { dict: Dictionary["premium"] }) {
   const ref = useReveal();
 
   return (
-    <section id="premium" className="py-24 md:py-32 bg-[#EEF2F7]">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-        <div className="mb-14">
-          <p className="text-[#3B4FD8] text-xs font-semibold uppercase tracking-[0.12em] mb-4">
-            Planes
+    <section id="premium" className="py-[var(--space-8)] md:py-[var(--space-10)] bg-surface-variant">
+      <div className="max-w-[var(--container-max)] mx-auto px-[var(--space-4)] md:px-[var(--space-5)]">
+        <div className="mb-[var(--space-8)]">
+          <p className="text-primary text-xs font-semibold uppercase tracking-[0.12em] mb-[var(--space-4)]">
+            {dict.eyebrow}
           </p>
           <h2
-            className="font-display font-bold text-[#0F172A] leading-[1.08]"
+            className="font-display font-bold text-on-surface leading-[1.08]"
             style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
           >
-            Gratis para siempre.
+            {dict.title}
             <br />
-            <span className="text-[#64748B]">Premium cuando lo necesites.</span>
+            <span className="text-on-surface-variant">{dict.titleMuted}</span>
           </h2>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-[var(--space-5)] max-w-3xl">
           {/* Free plan */}
-          <div className="reveal feature-card bg-white rounded-2xl p-7 border border-[#E2E8F0]">
-            <div className="mb-6">
-              <p className="font-display font-semibold text-[20px] text-[#0F172A] mb-1">
-                Básico
+          <div
+            className="reveal feature-card bg-surface border border-surface-variant p-[var(--space-5)]"
+            style={{ borderRadius: "var(--radius-lg)" }}
+          >
+            <div className="mb-[var(--space-5)]">
+              <p className="font-display font-semibold text-[20px] text-on-surface mb-[var(--space-1)]">
+                {dict.free.name}
               </p>
-              <p className="text-[#64748B] text-[14px]">Para empezar sin compromisos</p>
+              <p className="text-on-surface-variant text-sm">{dict.free.tagline}</p>
             </div>
 
-            <p className="font-display font-bold text-[#0F172A] mb-1"
-              style={{ fontSize: "clamp(32px, 4vw, 44px)" }}>
-              Gratis
+            <p
+              className="font-display font-bold text-on-surface mb-[var(--space-1)]"
+              style={{ fontSize: "clamp(32px, 4vw, 44px)" }}
+            >
+              {dict.free.price}
             </p>
-            <p className="text-[#64748B] text-[13px] mb-8">Para siempre</p>
+            <p className="text-on-surface-variant text-sm mb-[var(--space-8)]">{dict.free.period}</p>
 
-            <ul className="flex flex-col gap-3 mb-8">
-              {freeTier.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-[14px] text-[#0F172A]">
-                  <Check color="#22C55E" />
+            <ul className="flex flex-col gap-[var(--space-3)] mb-[var(--space-8)]">
+              {dict.free.items.map((item) => (
+                <li key={item} className="flex items-start gap-[var(--space-2)] text-sm text-on-surface">
+                  <Check color="var(--color-success)" />
                   {item}
                 </li>
               ))}
             </ul>
 
             <a
-              href="#descarga"
-              className="btn block text-center bg-[#0F172A] text-white font-semibold py-3 rounded-xl text-[14px] hover:bg-[#1e293b]"
+              href="#download"
+              className="btn block text-center bg-on-surface text-surface font-semibold py-[var(--space-3)] text-sm hover:opacity-90"
+              style={{ borderRadius: "var(--radius-md)" }}
             >
-              Descargar gratis
+              {dict.free.cta}
             </a>
           </div>
 
           {/* Premium plan */}
-          <div className="reveal delay-1 feature-card bg-[#0F172A] rounded-2xl p-7 border-2 border-[#3B4FD8] relative">
-            <div className="absolute top-5 right-5">
-              <span className="bg-[#3B4FD8] text-white text-[11px] font-semibold px-2.5 py-1 rounded-full">
-                Próximamente
+          <div
+            className="reveal delay-1 feature-card bg-inverse-surface p-[var(--space-5)] border-2 border-primary relative"
+            style={{ borderRadius: "var(--radius-lg)" }}
+          >
+            <div className="absolute top-[var(--space-5)] right-[var(--space-5)]">
+              <span
+                className="bg-primary text-on-primary text-xs font-semibold px-[var(--space-2)] py-[var(--space-1)]"
+                style={{ borderRadius: "var(--radius-sm)" }}
+              >
+                {dict.pro.badge}
               </span>
             </div>
 
-            <div className="mb-6">
-              <p className="font-display font-semibold text-[20px] text-white mb-1">
-                Premium
+            <div className="mb-[var(--space-5)]">
+              <p className="font-display font-semibold text-[20px] text-white mb-[var(--space-1)]">
+                {dict.pro.name}
               </p>
-              <p className="text-white/50 text-[14px]">Para usuarios que quieren más control</p>
+              <p className="text-white/50 text-sm">{dict.pro.tagline}</p>
             </div>
 
-            <p className="font-display font-bold text-white mb-1"
-              style={{ fontSize: "clamp(32px, 4vw, 44px)" }}>
-              S/ 9.99
+            <p
+              className="font-display font-bold text-white mb-[var(--space-1)]"
+              style={{ fontSize: "clamp(32px, 4vw, 44px)" }}
+            >
+              {dict.pro.price}
             </p>
-            <p className="text-white/40 text-[13px] mb-8">por mes</p>
+            <p className="text-white/40 text-sm mb-[var(--space-8)]">{dict.pro.period}</p>
 
-            <ul className="flex flex-col gap-3 mb-8">
-              {premiumTier.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-[14px] text-white/80">
-                  <Check color="#3B4FD8" />
+            <ul className="flex flex-col gap-[var(--space-3)] mb-[var(--space-8)]">
+              {dict.pro.items.map((item) => (
+                <li key={item} className="flex items-start gap-[var(--space-2)] text-sm text-white/80">
+                  <Check color="var(--color-primary)" />
                   {item}
                 </li>
               ))}
             </ul>
 
             <button
-              className="btn block w-full text-center bg-[#3B4FD8]/30 text-white/50 font-semibold py-3 rounded-xl text-[14px] cursor-not-allowed"
+              className="btn block w-full text-center bg-primary/30 text-white/50 font-semibold py-[var(--space-3)] text-sm cursor-not-allowed"
+              style={{ borderRadius: "var(--radius-md)" }}
               disabled
             >
-              Disponible pronto
+              {dict.pro.cta}
             </button>
           </div>
         </div>

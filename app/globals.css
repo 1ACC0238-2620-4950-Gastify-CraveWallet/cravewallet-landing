@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
+/* dark: aplica con data-theme="dark" en <html> (lo fija el script del layout). */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
   --font-sans: var(--font-inter);
   --font-display: var(--font-poppins);
+
+  /* Breakpoints */
+  --breakpoint-sm: 37.5rem;   /* 600px */
+  --breakpoint-md: 60rem;     /* 960px */
+  --breakpoint-xl: 80rem;     /* 1280px */
 
   /* Color base — 60 % */
   --color-background: #F8FAFC;
@@ -10,6 +18,8 @@
   --color-surface-variant: #EEF2F7;
   --color-on-surface: #0F172A;
   --color-on-surface-variant: #64748B;
+  /* Fondo de las secciones oscuras (hero, problema, descarga). */
+  --color-inverse-surface: #0F172A;
 
   /* Color primario — 30 % */
   --color-primary: #3B4FD8;
@@ -31,9 +41,65 @@
 }
 
 :root {
-  /* Emil: custom easing — stronger than browser defaults */
+  /* Emil: custom easing */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* Spacing */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-8:  48px;
+  --space-10: 64px;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Sombras — Material elevation */
+  --shadow-1: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-3: 0 4px 8px rgba(0,0,0,0.16);
+  --shadow-6: 0 8px 16px rgba(0,0,0,0.20);
+
+  /* Container */
+  --container-max: 1280px;
+}
+
+/* Modo oscuro: mismos valores que el modo oscuro del Design System en Figma
+   (matiz conservado y colores de texto/acción aclarados para WCAG AA). */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-background: #0B1120;
+  --color-surface: #151E31;
+  --color-surface-variant: #1E293B;
+  --color-on-surface: #F1F5F9;
+  --color-on-surface-variant: #94A3B8;
+  --color-inverse-surface: #05080F;
+
+  --color-primary: #AAB4FF;
+  --color-primary-container: #2A3AA8;
+  --color-on-primary: #0A1172;
+  --color-on-primary-container: #E0E4FF;
+  --color-primary-dark: #C7CDFF;
+
+  --color-accent: #FB923C;
+  --color-accent-container: #3A2416;
+  --color-on-accent: #0F172A;
+
+  --color-success: #4ADE80;
+  --color-warning: #FCD34D;
+  --color-error: #F87171;
+  --color-info: #7DD3FC;
+
+  --shadow-1: 0 1px 3px rgba(0,0,0,0.40);
+  --shadow-3: 0 4px 8px rgba(0,0,0,0.45);
+  --shadow-6: 0 8px 16px rgba(0,0,0,0.50);
 }
 
 html {
@@ -41,18 +107,27 @@ html {
 }
 
 body {
-  background: #F8FAFC;
-  color: #0F172A;
+  background: var(--color-background);
+  color: var(--color-on-surface);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out);
 }
 
+/* ─── Typography utilities ─────────────────────────────────── */
+.type-display  { font-family: var(--font-display); font-weight: 700; font-size: 40px; }
+.type-h1       { font-family: var(--font-display); font-weight: 600; font-size: 32px; }
+.type-h2       { font-family: var(--font-display); font-weight: 600; font-size: 24px; }
+.type-amount   { font-family: var(--font-display); font-weight: 700; font-size: 48px; }
+.type-body     { font-family: var(--font-body);    font-weight: 400; font-size: 16px; }
+.type-body-em  { font-family: var(--font-body);    font-weight: 500; font-size: 16px; }
+.type-caption  { font-family: var(--font-body);    font-weight: 400; font-size: 12px; }
+.type-currency { font-family: var(--font-body);    font-weight: 500; font-size: 14px; }
+
 /* ─── Emil: press feedback ─────────────────────────────────── */
-/* Nothing feels more responsive than a button that compresses */
 .btn {
   transition: transform 160ms var(--ease-out),
     background-color 160ms var(--ease-out),
-    border-color 160ms var(--ease-out),
     opacity 160ms var(--ease-out);
   cursor: pointer;
 }
@@ -61,22 +136,18 @@ body {
 }
 
 /* ─── Emil: card hover lift ────────────────────────────────── */
-/* specify exact properties — never `transition: all` */
+/* Shadow is static (Material). Only transform animates. */
 .feature-card {
-  transition: transform 220ms var(--ease-out),
-    box-shadow 220ms var(--ease-out),
-    border-color 220ms var(--ease-out);
+  box-shadow: var(--shadow-1);
+  transition: transform 220ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.09);
-    border-color: rgba(59, 79, 216, 0.18);
+    transform: translateY(-4px);
   }
 }
 
 /* ─── Scroll reveal ────────────────────────────────────────── */
-/* Elements start invisible below and slide up on enter */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -87,26 +158,29 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-/* Stagger siblings */
-.delay-1 { transition-delay: 70ms; }
-.delay-2 { transition-delay: 140ms; }
-.delay-3 { transition-delay: 210ms; }
-.delay-4 { transition-delay: 280ms; }
+.delay-1 { transition-delay: 60ms; }
+.delay-2 { transition-delay: 120ms; }
+.delay-3 { transition-delay: 180ms; }
+.delay-4 { transition-delay: 240ms; }
 
 /* ─── Testimonial card hover ───────────────────────────────── */
 .testimonial-card {
-  transition: transform 220ms var(--ease-out),
-    box-shadow 220ms var(--ease-out);
+  box-shadow: var(--shadow-1);
+  transition: transform 220ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .testimonial-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
   }
 }
 
+/* ─── Mobile drawer transition ─────────────────────────────── */
+.mobile-drawer {
+  transition: opacity 220ms var(--ease-out),
+    transform 220ms var(--ease-out);
+}
+
 /* ─── prefers-reduced-motion ───────────────────────────────── */
-/* Emil: accessibility is non-negotiable */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 
@@ -120,6 +194,9 @@ body {
     transition: none;
   }
   .btn {
-    transition: background-color 0ms, border-color 0ms;
+    transition: background-color 0ms;
+  }
+  .mobile-drawer {
+    transition: opacity 0ms;
   }
 }

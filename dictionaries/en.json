@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "title": "CraveWallet — Track your subscriptions and spending in soles | Gastify",
+    "description": "CraveWallet brings all your subscriptions, memberships and delivery spending into one place. Get alerts 24 hours before every charge and see what you really spend in soles. Free for Android.",
+    "keywords": "subscription manager, expense tracker, subscriptions Peru, Smart Fit, Netflix, Spotify, PedidosYa, recurring expenses, memberships, student budget, personal finance Peru, dollar to sol exchange rate",
+    "ogTitle": "CraveWallet — Stop paying for what you don't use",
+    "ogDescription": "Bring your subscriptions together, get charge alerts and convert everything to soles automatically. Built for university students and young professionals in Lima.",
+    "ogImageAlt": "CraveWallet — Subscription manager",
+    "ogLocale": "en_US",
+    "twitterTitle": "CraveWallet — Track your subscriptions in soles",
+    "twitterDescription": "How many subscriptions are you paying for without noticing? CraveWallet tells you and warns you before every charge.",
+    "appDescription": "Subscription and recurring expense manager for university students and young professionals in Peru."
+  },
+  "nav": {
+    "links": [
+      { "label": "Home", "href": "#hero" },
+      { "label": "The problem", "href": "#problem" },
+      { "label": "Solution", "href": "#solution" },
+      { "label": "Download", "href": "#download" },
+      { "label": "Premium", "href": "#premium" }
+    ],
+    "cta": "Download free",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Switch between light and dark mode",
+    "switchLanguage": "Ver el sitio en español"
+  },
+  "hero": {
+    "badge": "Gastify · Available for Android",
+    "title": ["Automatic", "charges"],
+    "titleHighlight": "don't warn you.",
+    "titleTail": "CraveWallet does.",
+    "body": "Bring Spotify, Netflix, Smart Fit and all your recurring expenses together. Get alerts 24 hours before every charge. Convert USD to soles with the Banco de la Nación exchange rate.",
+    "ctaPrimary": "Download free",
+    "ctaSecondary": "See the problem",
+    "stats": [
+      { "value": "4 – 8", "label": "active subscriptions per user" },
+      { "value": "S/ → $", "label": "real-time conversion" },
+      { "value": "−24h", "label": "alert before every charge" }
+    ]
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": ["Do you know how much you spent", "on subscriptions this month?"],
+    "body": "Spotify one day, Adobe the next, Smart Fit after that. Automatic charges pile up and nobody adds them up — until you see your bank statement and it's too late.",
+    "stats": [
+      {
+        "target": 2,
+        "prefix": "",
+        "suffix": " months",
+        "label": "to spot a forgotten",
+        "sublabel": "charge, when checking the bank",
+        "source": "Interviews, Ch. II, n = 6"
+      },
+      {
+        "target": 41,
+        "prefix": "",
+        "suffix": "%",
+        "label": "below the minimum level",
+        "sublabel": "of financial literacy in Peru",
+        "source": "SBS, 2022 survey"
+      },
+      {
+        "target": 100,
+        "prefix": "",
+        "suffix": "%",
+        "label": "had a forgotten charge",
+        "sublabel": "across both segments interviewed by Gastify",
+        "source": "Interviews, Ch. II, n = 6"
+      }
+    ],
+    "stories": [
+      {
+        "quote": "Kept PedidosYa for a promo, forgot about it and was charged 2 months in a row. Found out by chance while checking the bank.",
+        "person": "Darío, 20 · Surquillo"
+      },
+      {
+        "quote": "Smart Fit charged him for 2 months he didn't go to the gym. No warning. He only saw it in his bank statement.",
+        "person": "Eduardo, 19 · Ate"
+      },
+      {
+        "quote": "LinkedIn Premium charged him ~$40 for 3 months after he got a job. He found out in his monthly statement.",
+        "person": "Leonardo, 30 · Lince"
+      }
+    ],
+    "servicesTitle": "Services that pile up without you noticing"
+  },
+  "features": {
+    "eyebrow": "Solution",
+    "title": "Everything you need.",
+    "titleMuted": "Nothing you don't.",
+    "items": [
+      {
+        "title": "Everything in one place",
+        "description": "Add Netflix, Spotify, Adobe, Smart Fit and any recurring expense. All organized by category and billing date."
+      },
+      {
+        "title": "Alerts 24h before every charge",
+        "description": "A notification before every automatic renewal. Enough time to decide whether to cancel before it hits your account."
+      },
+      {
+        "title": "Spot what you don't use",
+        "description": "Automatically flags subscriptions with no activity in the last 30 days. Cancel what doesn't add value, save what matters."
+      },
+      {
+        "title": "Real-time PEN/USD conversion",
+        "description": "Exactly how much you pay in soles, using the Banco de la Nación exchange rate. Updated by the minute."
+      }
+    ]
+  },
+  "tone": [
+    "Spotify charges you tomorrow — S/ 17.90. Should we let it go through?",
+    "You cancelled Dropbox! That's USD 9.99 back in your pocket every month.",
+    "You're offline. We'll check the exchange rate as soon as you're back online."
+  ],
+  "preview": {
+    "eyebrow": "Preview",
+    "title": "Designed to be understood",
+    "titleMuted": "at a glance.",
+    "screens": [
+      { "title": "Dashboard", "description": "This month's spending and upcoming charges at a glance." },
+      { "title": "Alerts", "description": "Notifications before every renewal, with a direct action." },
+      { "title": "Exchange rate", "description": "Your dollar subscriptions, converted to soles instantly." }
+    ],
+    "toneTitle": "How CraveWallet talks to you"
+  },
+  "social": {
+    "eyebrow": "User research",
+    "title": "Real stories.",
+    "titleMuted": "The same problem.",
+    "body": "Interviews conducted by the Gastify team with young people in Lima (September 2026). 100% had at least one forgotten automatic charge. 100% have dollar subscriptions without knowing their cost in soles.",
+    "testimonials": [
+      {
+        "quote": "I kept PedidosYa active for a promo that had already expired. They charged me 2 months in a row and I found out by chance while checking the bank. A 24h alert would have stopped it before the first charge.",
+        "role": "20 · Student, Surquillo",
+        "segment": "Segment 1"
+      },
+      {
+        "quote": "Smart Fit charged me for 2 months without going to the gym, zero notification. I pay ChatGPT and Amazon in dollars and never knew how much that was in soles until my card limit dropped. That has to be fixed.",
+        "role": "19 · Working student, Ate",
+        "segment": "Segment 1"
+      },
+      {
+        "quote": "LinkedIn Premium charged me ~$40 three months in a row after I got the job and forgot to cancel it. I only saw it in my statement. An alert 24h earlier would have saved me the trouble.",
+        "role": "30 · Industrial engineer, Lince",
+        "segment": "Segment 2"
+      }
+    ],
+    "findingsTitle": "Cross-segment findings — both segments (n = 6)",
+    "findingsValue": "100%",
+    "findings": [
+      "get no advance charge alert today — they always find out by checking the bank.",
+      "have at least one dollar subscription without knowing its cost in soles until the charge.",
+      "described a specific forgotten automatic charge, spotted 1 to 3 months later."
+    ],
+    "toneTitle": "How CraveWallet talks to you · Tone of voice (Ch. III, §3.1.1.1)"
+  },
+  "premium": {
+    "eyebrow": "Plans",
+    "title": "Free forever.",
+    "titleMuted": "Premium when you need it.",
+    "free": {
+      "name": "Basic",
+      "tagline": "Get started with no commitment",
+      "price": "Free",
+      "period": "Forever",
+      "items": [
+        "Up to 5 tracked subscriptions",
+        "Alerts 24h before every charge",
+        "Real-time PEN/USD conversion",
+        "History for the last 30 days",
+        "Predefined spending categories"
+      ],
+      "cta": "Download free"
+    },
+    "pro": {
+      "badge": "Coming soon",
+      "name": "Premium",
+      "tagline": "For users who want more control",
+      "price": "S/ 9.99",
+      "period": "per month",
+      "items": [
+        "Unlimited subscriptions",
+        "Spending analysis by category",
+        "Custom monthly budget",
+        "Export data to Excel / PDF",
+        "Inactive subscription detection",
+        "No ads",
+        "Priority support"
+      ],
+      "cta": "Available soon"
+    }
+  },
+  "download": {
+    "eyebrow": "Free download",
+    "title": "Start today.",
+    "titleMuted": "Your wallet",
+    "titleTail": "will thank you.",
+    "body": "Basic plan free forever. No credit card, no commitment. Available for Android.",
+    "cta": "Get it on Android",
+    "requirement": "Requires Android 8.0 or later",
+    "trust": [
+      "No bank connection needed",
+      "Free plan always available",
+      "Built for the Peruvian market"
+    ]
+  },
+  "footer": {
+    "links": [
+      { "label": "The problem", "href": "#problem" },
+      { "label": "Solution", "href": "#solution" },
+      { "label": "Preview", "href": "#preview" },
+      { "label": "Download", "href": "#download" },
+      { "label": "Premium", "href": "#premium" }
+    ],
+    "tagline": "Financial empowerment for Peruvian digital natives.",
+    "by": "by Gastify",
+    "credits": "University project — UPC · Software Engineering",
+    "designSystem": "Design System v1.0 · Material Design 3"
+  },
+  "phone": {
+    "dashboard": {
+      "greeting": "Good morning 👋",
+      "hello": "Hi, Mario",
+      "total": "Total monthly spending",
+      "approx": "≈ USD 50.24 · today",
+      "active": "12 active",
+      "due": "2 due",
+      "upcoming": "Upcoming charges",
+      "items": [
+        { "sub": "Music", "badge": "Tomorrow" },
+        { "sub": "Streaming", "badge": "In 3 days" },
+        { "sub": "Software", "badge": "In 7 days" }
+      ]
+    },
+    "alerts": {
+      "title": "Alerts",
+      "unread": "3 unread",
+      "due": "Charge tomorrow",
+      "headline": "Spotify charges you tomorrow",
+      "question": "Should we let it go through?",
+      "cancel": "Cancel",
+      "renew": "Renew",
+      "items": [
+        { "title": "You cancelled Dropbox!", "body": "USD 9.99 back in your pocket." },
+        { "title": "Netflix renews in 3 days", "body": "S/ 43.90 — Sep 28" }
+      ]
+    },
+    "exchange": {
+      "title": "Exchange rate",
+      "source": "Banco de la Nación · 2 min ago",
+      "equals": "USD 1.00 equals",
+      "delta": "+0.03 vs yesterday",
+      "list": "Your subscriptions in PEN"
+    }
+  }
+}
