@@ -34,7 +34,8 @@ export default function DownloadCTA({ dict }: { dict: Dictionary["download"] }) 
           </p>
 
           <a
-            href="#"
+            href="/CraveWallet-TB1-cloud-debug.apk"
+            download
             className="btn inline-flex items-center gap-[var(--space-2)] bg-primary text-on-primary font-semibold px-[var(--space-6)] py-[var(--space-4)] text-[15px] hover:bg-primary-dark"
             style={{ borderRadius: "var(--radius-md)" }}
           >

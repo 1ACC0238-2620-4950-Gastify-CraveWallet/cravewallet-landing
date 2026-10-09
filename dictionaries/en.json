@@ -199,7 +199,7 @@
     "titleTail": "will thank you.",
     "body": "Basic plan free forever. No credit card, no commitment. Available for Android.",
     "cta": "Get it on Android",
-    "requirement": "Requires Android 8.0 or later",
+    "requirement": "Test APK (15 MB). Requires Android 8.0 or later; Android will ask you to allow installs from this browser.",
     "trust": [
       "No bank connection needed",
       "Free plan always available",
