@@ -75,6 +75,7 @@ export default function AppPreview({
                 style={{ borderColor: TONE_COLORS[i], borderRadius: "var(--radius-lg)" }}
               >
                 <div
+                  aria-hidden="true"
                   className="w-1.5 h-1.5 rounded-full shrink-0 mt-2"
                   style={{ backgroundColor: TONE_COLORS[i] }}
                 />

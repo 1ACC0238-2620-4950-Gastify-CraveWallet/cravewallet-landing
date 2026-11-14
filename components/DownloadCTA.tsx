@@ -5,6 +5,7 @@ export default function DownloadCTA({ dict }: { dict: Dictionary["download"] }) 
     <section id="download" className="py-[var(--space-8)] md:py-[var(--space-10)] bg-inverse-surface relative overflow-hidden">
       {/* Ambient glow */}
       <div
+        aria-hidden="true"
         className="absolute bottom-0 left-0 w-[500px] h-[400px] pointer-events-none"
         style={{
           background:
@@ -39,7 +40,7 @@ export default function DownloadCTA({ dict }: { dict: Dictionary["download"] }) 
             className="btn inline-flex items-center gap-[var(--space-2)] bg-primary text-on-primary font-semibold px-[var(--space-6)] py-[var(--space-4)] text-[15px] hover:bg-primary-dark"
             style={{ borderRadius: "var(--radius-md)" }}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M3.18 23.76c.37.2.8.2 1.17-.02L21.4 14.1a1.1 1.1 0 0 0 0-1.9L4.35.57C4 .36 3.55.37 3.18.57A1.1 1.1 0 0 0 2.6 1.5v21a1.1 1.1 0 0 0 .58.96z" />
             </svg>
             {dict.cta}
@@ -54,7 +55,7 @@ export default function DownloadCTA({ dict }: { dict: Dictionary["download"] }) 
         <div className="flex flex-col sm:flex-row gap-[var(--space-5)] mt-[var(--space-8)] pt-[var(--space-8)] border-t border-white/8">
           {dict.trust.map((item) => (
             <div key={item} className="flex items-center gap-[var(--space-2)]">
-              <div className="w-1 h-1 rounded-full bg-white/20 shrink-0" />
+              <div aria-hidden="true" className="w-1 h-1 rounded-full bg-white/20 shrink-0" />
               <p className="text-white/35 text-sm">{item}</p>
             </div>
           ))}

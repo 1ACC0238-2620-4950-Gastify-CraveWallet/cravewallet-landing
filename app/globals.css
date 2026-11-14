@@ -124,6 +124,33 @@ body {
 .type-caption  { font-family: var(--font-body);    font-weight: 400; font-size: 12px; }
 .type-currency { font-family: var(--font-body);    font-weight: 500; font-size: 14px; }
 
+/* ─── Accessibility: skip link & focus-visible ─────────────── */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-4);
+  z-index: 100;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: var(--shadow-3);
+  transform: translateY(-200%);
+  transition: transform 160ms var(--ease-out);
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 /* ─── Emil: press feedback ─────────────────────────────────── */
 .btn {
   transition: transform 160ms var(--ease-out),

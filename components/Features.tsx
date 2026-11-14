@@ -73,6 +73,7 @@ export default function Features({ dict }: { dict: Dictionary["features"] }) {
               style={{ borderRadius: "var(--radius-lg)" }}
             >
               <div
+                aria-hidden="true"
                 className="w-10 h-10 flex items-center justify-center mb-[var(--space-5)]"
                 style={{
                   borderRadius: "var(--radius-md)",
