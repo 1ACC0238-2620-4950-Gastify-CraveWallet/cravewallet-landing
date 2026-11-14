@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Poppins, Inter } from "next/font/google";
-import { hasLocale, locales } from "@/lib/i18n";
+import { defaultLocale, hasLocale, htmlLang, locales } from "@/lib/i18n";
 import { getDictionary } from "./dictionaries";
 import "../globals.css";
 
@@ -40,7 +40,13 @@ export async function generateMetadata({
     robots: { index: true, follow: true },
     alternates: {
       canonical: `${SITE}/${lang}`,
-      languages: Object.fromEntries(locales.map((l) => [l, `${SITE}/${l}`])),
+      languages: {
+        "en-US": `${SITE}/en`,
+        "es-419": `${SITE}/es`,
+        en: `${SITE}/en`,
+        es: `${SITE}/es`,
+        "x-default": `${SITE}/${defaultLocale}`,
+      },
     },
     openGraph: {
       type: "website",
@@ -86,7 +92,7 @@ export default async function RootLayout({
     name: "CraveWallet",
     operatingSystem: "Android",
     applicationCategory: "FinanceApplication",
-    inLanguage: lang,
+    inLanguage: htmlLang[lang],
     offers: { "@type": "Offer", price: "0", priceCurrency: "PEN" },
     description: meta.appDescription,
     author: { "@type": "Organization", name: "Gastify" },
@@ -94,7 +100,7 @@ export default async function RootLayout({
 
   return (
     <html
-      lang={lang}
+      lang={htmlLang[lang]}
       className={`${poppins.variable} ${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
