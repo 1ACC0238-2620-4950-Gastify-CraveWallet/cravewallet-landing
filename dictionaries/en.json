@@ -23,7 +23,11 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "toggleTheme": "Switch between light and dark mode",
-    "switchLanguage": "Ver el sitio en español"
+    "switchLanguage": "Ver el sitio en español",
+    "skipToContent": "Skip to main content",
+    "mainNavLabel": "Main navigation",
+    "mobileNavLabel": "Mobile navigation",
+    "backToHome": "Back to home"
   },
   "hero": {
     "badge": "Gastify · Available for Android",
@@ -129,6 +133,7 @@
     "eyebrow": "User research",
     "title": "Real stories.",
     "titleMuted": "The same problem.",
+    "starsLabel": "Rated 5 out of 5 stars",
     "body": "Interviews conducted by the Gastify team with young people in Lima (September 2026). 100% had at least one forgotten automatic charge. 100% have dollar subscriptions without knowing their cost in soles.",
     "testimonials": [
       {
@@ -207,6 +212,7 @@
     ]
   },
   "footer": {
+    "navLabel": "Footer navigation",
     "links": [
       { "label": "The problem", "href": "#problem" },
       { "label": "Solution", "href": "#solution" },
@@ -214,10 +220,110 @@
       { "label": "Download", "href": "#download" },
       { "label": "Premium", "href": "#premium" }
     ],
+    "termsLabel": "Terms and Conditions",
     "tagline": "Financial empowerment for Peruvian digital natives.",
     "by": "by Gastify",
     "credits": "University project — UPC · Software Engineering",
     "designSystem": "Design System v1.0 · Material Design 3"
+  },
+  "videos": {
+    "eyebrow": "Videos",
+    "title": "Meet CraveWallet",
+    "titleMuted": "and the team behind it.",
+    "body": "See how the app works in practice and meet the Gastify team building it at UPC.",
+    "aboutProduct": {
+      "badge": "About the Product",
+      "title": "About the Product",
+      "description": "A walkthrough of subscription tracking, 24-hour advance renewal reminders, USD/PEN conversion, and delivery spending management."
+    },
+    "aboutTeam": {
+      "badge": "About the Team",
+      "title": "About the Team",
+      "description": "Meet the five members of Gastify and learn how we designed and built CraveWallet in Software Engineering at UPC."
+    }
+  },
+  "terms": {
+    "metaTitle": "Terms and Conditions — CraveWallet | Gastify",
+    "metaDescription": "Terms of Service, data privacy policy, and professional ethical commitments of CraveWallet by Gastify.",
+    "eyebrow": "Legal & ethical document",
+    "title": "Terms and Conditions of Service",
+    "lastUpdated": "Last updated: November 2026",
+    "intro": "Welcome to CraveWallet, a product developed by the academic startup Gastify as part of the Mobile Application Development course in the Software Engineering program at Universidad Peruana de Ciencias Aplicadas (UPC), Lima, Peru. By downloading the mobile application, registering an account, or using this website, you agree to these Terms and Conditions.",
+    "sections": [
+      {
+        "id": "service-scope",
+        "title": "1. Nature and Scope of the Service",
+        "paragraphs": [
+          "CraveWallet is an informational personal finance and recurring expense tracking application designed to help university students and young professionals centralize and monitor three types of commitments: (1) physical and academic memberships, (2) digital subscriptions and software tools (billed in Peruvian Soles or US Dollars), and (3) recurring delivery expenses and monthly budgets.",
+          "CraveWallet operates as a personal organization and reminder tool without connecting to bank accounts. The application does not execute charges on behalf of third-party services or act as a financial intermediary with external providers (such as Netflix, Spotify, Smart Fit, Adobe, or delivery platforms). Marking a subscription as cancelled within CraveWallet only updates your personal portfolio and disables its local reminders; it does not cancel your commercial contract with the external provider."
+        ],
+        "bullets": []
+      },
+      {
+        "id": "plans-billing",
+        "title": "2. Access Plans and Billing (Basic Plan & Premium Plan)",
+        "paragraphs": [
+          "CraveWallet offers two clearly differentiated access tiers tailored to user needs:"
+        ],
+        "bullets": [
+          "Basic Plan (Free): free forever, allowing users to track up to 5 active subscriptions, receive advance alerts 24 hours before each billing cutoff date, check reference USD/PEN conversion estimates, and log delivery expenses.",
+          "Premium Plan: priced at S/ 9.99 per month (Peruvian Soles, PEN), including unlimited tracked subscriptions, spending analytics by category, customizable monthly delivery budgets, inactive subscription detection, and data export.",
+          "Payment processing via Mercado Pago: the S/ 9.99 monthly Premium subscription is processed through the Mercado Pago payment gateway. CraveWallet never stores full credit/debit card numbers or CVV security codes on its servers; payment credentials and transactions are handled directly by the payment processor and confirmed to our backend via verified notifications.",
+          "Premium Plan cancellation: you may cancel your Premium subscription renewal at any time from your profile. Upon cancellation, your Premium benefits remain active until the end of the current paid monthly billing cycle, after which your account automatically returns to the free Basic Plan with no further charges."
+        ]
+      },
+      {
+        "id": "data-stored",
+        "title": "3. Stored Data, Reminders, and Third-Party Services",
+        "paragraphs": [
+          "In accordance with data minimization principles and in direct response to user concerns regarding bank account linking, CraveWallet never requests bank credentials, passwords, or banking tokens. We only store and process the information strictly necessary to provide the service:"
+        ],
+        "bullets": [
+          "Account data: registration email address (account email), encrypted password credentials (secure hash), and profile reference currency preference (PEN or USD).",
+          "Subscription portfolio: service name, original amount, billing currency, spending category, billing cycle (monthly or annual), next renewal date, and record status (active or cancelled).",
+          "Delivery expenses and budgets: merchant name, amount in Peruvian Soles (PEN), category, order date, and user-defined monthly delivery budget limit (monthly budget) along with the accumulated monthly total.",
+          "Reminders and device permissions: advance reminders scheduled 24 hours before each renewal via native device calendar events and local notifications, created only when you grant explicit permission on Android, as well as local UI preferences (language and light/dark theme).",
+          "Exchange rates via third-party API: to display the Peruvian Soles equivalent of dollar-billed subscriptions, our backend queries an external exchange rate service (ExchangeRate-API) through an anti-corruption adapter with up to 24-hour caching. Displayed exchange rates are reference estimates; actual charges on your bank statement depend on the exchange rate applied by your financial institution on the cutoff date."
+        ]
+      },
+      {
+        "id": "ethical-principles",
+        "title": "4. Professional and Ethical Principles (ACM/IEEE & CIP Code of Ethics)",
+        "paragraphs": [
+          "The design, development, and operation of CraveWallet by the Gastify engineering team (Mario Gabriel Sejuro Medina, Anghelo Edwin Faustino Hurtado, Sebastian Jared Roman Zeballos, Josué Francisco Carpio Peña, and Alexander Aliaga) are explicitly governed by the ACM/IEEE Software Engineering Code of Ethics and Professional Practice and the Código de Ética del Colegio de Ingenieros del Perú (CIP). Specifically, we uphold the following binding commitments to our users and society:"
+        ],
+        "bullets": [
+          "Public interest and user well-being (ACM/IEEE Principle 1 · CIP Duties to Society): we promote financial literacy and transparency without encouraging debt or using deceptive dark patterns in Premium subscription sign-up or cancellation flows.",
+          "Privacy and confidentiality (ACM/IEEE Principles 1.03 & 3.12 · CIP Confidentiality): we strictly respect the privacy of your declared financial records, collecting only the minimum data needed to compute your portfolio and budget.",
+          "Honesty and truthfulness (ACM/IEEE Principles 1.06 & 6.07 · CIP Honesty and Veracity): we transparently communicate the actual capabilities of the product, the reference nature of third-party exchange rates, and the scope of our academic test release (APK).",
+          "User data responsibility and security (ACM/IEEE Principle 3 · CIP Professional Responsibility): we safeguard the integrity and availability of your account records through token-based authentication, encrypted transport (HTTPS/TLS), and strict per-user data isolation.",
+          "No selling of user data: Gastify strictly guarantees that we NEVER sell, rent, trade, or monetize your personal data, email address, subscription portfolio, or delivery spending habits to third parties, data brokers, or advertising networks."
+        ]
+      },
+      {
+        "id": "account-deletion",
+        "title": "5. User Control, Data Portability, and Account Deletion",
+        "paragraphs": [
+          "You retain full ownership of all information you log in CraveWallet. At any time, you can view, edit, or delete individual subscriptions, delivery expenses, and budget limits directly within the application.",
+          "You also have the right to request the permanent and irreversible deletion of your account and all associated records stored in our database (account email, subscription history, delivery expense logs, and monthly budgets) by submitting a request via [COMPLETAR: enlace o correo para solicitud de eliminación de cuenta]. We will process permanent deletion within a maximum of [COMPLETAR: plazo de atención en días hábiles, p. ej. 5 días hábiles] and confirm completion by email."
+        ],
+        "bullets": []
+      },
+      {
+        "id": "contact",
+        "title": "6. Contact, Support, and Legal Information",
+        "paragraphs": [
+          "If you have questions about these Terms and Conditions, Premium Plan billing via Mercado Pago, or our ethical handling of your personal data, you can reach the Gastify team through the following official channels:"
+        ],
+        "bullets": [
+          "Project Owner / Startup: Gastify — Software Engineering Team, Universidad Peruana de Ciencias Aplicadas (UPC), Lima, Peru.",
+          "Legal Entity / Tax ID (if applicable): [COMPLETAR: razón social / RUC o identificación legal del responsable]",
+          "Support and Contact Email: [COMPLETAR: correo de contacto]",
+          "Privacy and Account Deletion Requests: [COMPLETAR: enlace o correo para solicitud de eliminación de cuenta]",
+          "Official Support Channel or Address: [COMPLETAR: dirección o canal oficial de soporte]"
+        ]
+      }
+    ]
   },
   "phone": {
     "dashboard": {
