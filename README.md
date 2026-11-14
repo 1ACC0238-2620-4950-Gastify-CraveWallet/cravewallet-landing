@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CraveWallet — Landing Page
 
-## Getting Started
+Landing page oficial de **CraveWallet** (by **Gastify**), gestor de suscripciones, membresías y gastos de delivery desarrollado como proyecto de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC).
 
-First, run the development server:
+## Stack tecnológico
+
+- **Framework:** Next.js 16 (App Router) + React 19 + TypeScript
+- **Estilos:** Tailwind CSS v4 + Design System Material Design 3 (modo claro y oscuro)
+- **Internacionalización (i18n):** Inglés por defecto (`/en`, `en-US`) y Español Latinoamérica (`/es`, `es-419`) mediante `lib/i18n.ts`, `proxy.ts` y `dictionaries/*.json`
+
+## Desarrollo local
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador (redirige automáticamente a `/en` por defecto o a `/es` si el navegador prefiere español).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para verificar calidad de código y compilación de producción:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Cómo configurar los videos (About the Product & About the Team)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+La sección de videos (`components/Videos.tsx`, ancla `#videos`) está lista para incrustar los videos **About the Product** y **About the Team** de YouTube exigidos por la rúbrica del curso. Mientras las URLs estén vacías (`""`), la sección no se renderiza en la página.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Para activarla, pega los enlaces de YouTube (acepta formatos `https://www.youtube.com/watch?v=...`, `https://youtu.be/...` o `https://www.youtube.com/embed/...`) en **`lib/videos.ts`**:
 
-## Deploy on Vercel
+```ts
+// lib/videos.ts
+export const VIDEO_URLS = {
+  aboutProduct: process.env.NEXT_PUBLIC_VIDEO_ABOUT_PRODUCT_URL ?? "https://www.youtube.com/watch?v=TU_ID_PRODUCTO",
+  aboutTeam: process.env.NEXT_PUBLIC_VIDEO_ABOUT_TEAM_URL ?? "https://www.youtube.com/watch?v=TU_ID_EQUIPO",
+} as const;
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+También puedes definir las variables de entorno `NEXT_PUBLIC_VIDEO_ABOUT_PRODUCT_URL` y `NEXT_PUBLIC_VIDEO_ABOUT_TEAM_URL` en Vercel o en `.env.local` sin modificar el código.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Términos y Condiciones (`/[lang]/terms`)
+
+La página de Términos y Condiciones está disponible en ambos idiomas (`/en/terms` y `/es/terms`) y enlazada desde el pie de página (`components/Footer.tsx`). Su contenido se encuentra en `dictionaries/en.json` y `dictionaries/es.json` bajo la clave `"terms"`.
+
+Antes de la entrega final, reemplaza los marcadores `[COMPLETAR: ...]` en ambos diccionarios (`dictionaries/es.json` y `dictionaries/en.json`):
+
+1. `[COMPLETAR: correo de contacto]` — correo oficial de soporte del equipo Gastify.
+2. `[COMPLETAR: enlace o correo para solicitud de eliminación de cuenta]` — canal para ejercer la baja de cuenta y borrado de datos.
+3. `[COMPLETAR: plazo de atención en días hábiles, p. ej. 5 días hábiles]` — plazo máximo de atención para solicitudes de eliminación de datos.
+4. `[COMPLETAR: razón social / RUC o identificación legal del responsable]` — datos legales del titular (o mantener como proyecto académico UPC).
+5. `[COMPLETAR: dirección o canal oficial de soporte]` — dirección o canal de atención al usuario.
