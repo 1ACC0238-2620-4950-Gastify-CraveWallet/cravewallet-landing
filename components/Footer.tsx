@@ -1,7 +1,13 @@
-import type { Dictionary } from "@/lib/i18n";
+import type { Dictionary, Locale } from "@/lib/i18n";
 import Logo from "./Logo";
 
-export default function Footer({ dict }: { dict: Dictionary["footer"] }) {
+export default function Footer({
+  lang,
+  dict,
+}: {
+  lang: Locale;
+  dict: Dictionary["footer"];
+}) {
   return (
     <footer className="bg-surface border-t border-surface-variant py-[var(--space-8)]">
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--space-4)] md:px-[var(--space-5)]">
@@ -21,17 +27,27 @@ export default function Footer({ dict }: { dict: Dictionary["footer"] }) {
           </div>
 
           {/* Nav links */}
-          <nav className="flex flex-wrap gap-x-[var(--space-6)] gap-y-[var(--space-2)]">
+          <nav
+            aria-label={dict.navLabel}
+            className="flex flex-wrap gap-x-[var(--space-6)] gap-y-[var(--space-2)]"
+          >
             {dict.links.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={link.href.startsWith("#") ? `/${lang}${link.href}` : link.href}
                 className="text-sm text-on-surface-variant hover:text-on-surface"
                 style={{ transition: "color 160ms var(--ease-out)" }}
               >
                 {link.label}
               </a>
             ))}
+            <a
+              href={`/${lang}/terms`}
+              className="text-sm text-on-surface-variant hover:text-on-surface"
+              style={{ transition: "color 160ms var(--ease-out)" }}
+            >
+              {dict.termsLabel}
+            </a>
           </nav>
         </div>
 

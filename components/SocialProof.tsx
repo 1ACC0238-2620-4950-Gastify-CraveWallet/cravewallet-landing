@@ -23,11 +23,11 @@ const testimonials = [
   },
 ];
 
-function Stars() {
+function Stars({ label }: { label: string }) {
   return (
-    <div className="flex gap-0.5 mb-[var(--space-4)]">
+    <div role="img" aria-label={label} className="flex gap-0.5 mb-[var(--space-4)]">
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="var(--color-warning)">
+        <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="var(--color-warning)" aria-hidden="true">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
@@ -68,7 +68,7 @@ export default function SocialProof({ dict, tone }: { dict: Dictionary["social"]
               className={`testimonial-card reveal ${t.delay} bg-surface border border-surface-variant p-[var(--space-5)] flex flex-col`}
               style={{ borderRadius: "var(--radius-lg)" }}
             >
-              <Stars />
+              <Stars label={dict.starsLabel} />
               {/* Segment badge */}
               <div className="mb-[var(--space-4)]">
                 <span
@@ -87,6 +87,7 @@ export default function SocialProof({ dict, tone }: { dict: Dictionary["social"]
               </p>
               <div className="flex items-center gap-[var(--space-3)]">
                 <div
+                  aria-hidden="true"
                   className="w-9 h-9 flex items-center justify-center text-on-primary text-sm font-bold shrink-0"
                   style={{
                     backgroundColor: t.color,
@@ -144,6 +145,7 @@ export default function SocialProof({ dict, tone }: { dict: Dictionary["social"]
                 style={{ borderColor: TONE_COLORS[i], borderRadius: "var(--radius-lg)" }}
               >
                 <div
+                  aria-hidden="true"
                   className="w-1.5 h-1.5 rounded-full shrink-0 mt-2"
                   style={{ backgroundColor: TONE_COLORS[i] }}
                 />

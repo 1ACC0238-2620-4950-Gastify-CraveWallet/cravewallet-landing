@@ -1,17 +1,22 @@
 "use client";
 
-import type { Locale } from "@/lib/i18n";
+import { usePathname } from "next/navigation";
+import { htmlLang, type Locale } from "@/lib/i18n";
 
 // Cambia al otro idioma y lo recuerda en la cookie que lee el proxy. Es un
 // enlace normal (carga completa) para que el script del layout vuelva a
 // aplicar el tema sobre el nuevo <html lang>.
 export default function LanguageSwitch({ lang, label }: { lang: Locale; label: string }) {
   const other: Locale = lang === "es" ? "en" : "es";
+  const pathname = usePathname();
+  const targetHref = pathname
+    ? pathname.replace(new RegExp(`^/${lang}(?=/|$)`), `/${other}`)
+    : `/${other}`;
 
   return (
     <a
-      href={`/${other}`}
-      hrefLang={other}
+      href={targetHref}
+      hrefLang={htmlLang[other]}
       aria-label={label}
       title={label}
       onClick={() => {

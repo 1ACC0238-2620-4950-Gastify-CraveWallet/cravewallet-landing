@@ -6,7 +6,7 @@
     "ogTitle": "CraveWallet — Deja de pagar por lo que no usas",
     "ogDescription": "Centraliza tus suscripciones, recibe alertas de cobro y convierte todo a soles automáticamente. Diseñado para universitarios y profesionales jóvenes en Lima.",
     "ogImageAlt": "CraveWallet — Gestor de suscripciones",
-    "ogLocale": "es_PE",
+    "ogLocale": "es_419",
     "twitterTitle": "CraveWallet — Controla tus suscripciones en soles",
     "twitterDescription": "¿Cuántas suscripciones pagas sin darte cuenta? CraveWallet te lo dice y te avisa antes de cada cobro.",
     "appDescription": "Gestor de suscripciones y gastos recurrentes para universitarios y profesionales jóvenes en Perú."
@@ -23,7 +23,11 @@
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "toggleTheme": "Cambiar entre modo claro y oscuro",
-    "switchLanguage": "Ver el sitio en inglés"
+    "switchLanguage": "Ver el sitio en inglés",
+    "skipToContent": "Saltar al contenido principal",
+    "mainNavLabel": "Navegación principal",
+    "mobileNavLabel": "Navegación móvil",
+    "backToHome": "Volver al inicio"
   },
   "hero": {
     "badge": "Gastify · Disponible para Android",
@@ -129,6 +133,7 @@
     "eyebrow": "Investigación de usuarios",
     "title": "Historias reales.",
     "titleMuted": "El mismo problema.",
+    "starsLabel": "Calificación de 5 sobre 5 estrellas",
     "body": "Entrevistas realizadas por el equipo de Gastify a jóvenes de Lima (septiembre 2026). El 100 % vivió al menos un cobro automático olvidado. El 100 % tiene suscripciones en dólares sin saber su equivalente en soles.",
     "testimonials": [
       {
@@ -207,6 +212,7 @@
     ]
   },
   "footer": {
+    "navLabel": "Enlaces del pie de página",
     "links": [
       { "label": "El problema", "href": "#problem" },
       { "label": "Solución", "href": "#solution" },
@@ -214,10 +220,110 @@
       { "label": "Descarga", "href": "#download" },
       { "label": "Premium", "href": "#premium" }
     ],
+    "termsLabel": "Términos y Condiciones",
     "tagline": "Empoderamiento financiero para nativos digitales peruanos.",
     "by": "by Gastify",
     "credits": "Proyecto universitario — UPC · Ingeniería de Software",
     "designSystem": "Design System v1.0 · Material Design 3"
+  },
+  "videos": {
+    "eyebrow": "Videos",
+    "title": "Conoce CraveWallet",
+    "titleMuted": "y al equipo detrás.",
+    "body": "Descubre cómo funciona la aplicación y conoce al equipo de Gastify que la desarrolla en la UPC.",
+    "aboutProduct": {
+      "badge": "About the Product",
+      "title": "Sobre el producto",
+      "description": "Recorrido por el registro de suscripciones, recordatorios 24 horas antes del cobro, conversión USD/PEN y seguimiento de gastos de delivery."
+    },
+    "aboutTeam": {
+      "badge": "About the Team",
+      "title": "Sobre el equipo",
+      "description": "Conoce a los cinco integrantes de Gastify y cómo diseñamos y construimos CraveWallet en Ingeniería de Software (UPC)."
+    }
+  },
+  "terms": {
+    "metaTitle": "Términos y Condiciones — CraveWallet | Gastify",
+    "metaDescription": "Términos del Servicio, política de privacidad y principios éticos profesionales de CraveWallet por Gastify.",
+    "eyebrow": "Documento legal y ético",
+    "title": "Términos y Condiciones del Servicio",
+    "lastUpdated": "Última actualización: noviembre de 2026",
+    "intro": "Bienvenido a CraveWallet, un producto desarrollado por la startup académica Gastify en el marco del curso de Aplicaciones para Dispositivos Móviles de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC), Lima, Perú. Al descargar la aplicación móvil, registrarte o utilizar este sitio web, aceptas los presentes Términos y Condiciones.",
+    "sections": [
+      {
+        "id": "service-scope",
+        "title": "1. Naturaleza y alcance del servicio",
+        "paragraphs": [
+          "CraveWallet es una aplicación móvil e informativa de gestión de finanzas personales diseñada para ayudar a estudiantes universitarios y profesionales jóvenes a centralizar y dar seguimiento a tres tipos de compromisos: (1) membresías físicas y académicas, (2) suscripciones digitales y herramientas tecnológicas (en soles o dólares), y (3) gastos recurrentes de delivery y presupuestos mensuales.",
+          "CraveWallet opera como una herramienta de organización y recordatorio personal sin conexión a cuentas bancarias. La aplicación no ejecuta cobros de servicios de terceros ni actúa como intermediario financiero ante proveedores externos (como Netflix, Spotify, Smart Fit, Adobe o plataformas de delivery). Marcar una suscripción como cancelada dentro de CraveWallet actualiza únicamente tu portafolio personal y desactiva sus recordatorios locales, pero no cancela el contrato comercial con el proveedor externo."
+        ],
+        "bullets": []
+      },
+      {
+        "id": "plans-billing",
+        "title": "2. Planes de acceso y facturación (Plan Básico y Plan Premium)",
+        "paragraphs": [
+          "CraveWallet ofrece dos niveles de acceso claramente diferenciados para adaptarse a las necesidades de cada usuario:"
+        ],
+        "bullets": [
+          "Plan Básico (Free): gratuito de forma permanente, permite mantener hasta 5 suscripciones activas registradas, recibir alertas anticipadas 24 horas antes de cada fecha de cobro, consultar la conversión referencial USD/PEN y registrar gastos de delivery.",
+          "Plan Premium: tiene un costo de S/ 9.99 mensuales (soles peruanos, PEN) e incluye registro ilimitado de suscripciones, analítica de gastos por categoría, presupuesto mensual personalizable, detección de suscripciones inactivas y exportación de datos.",
+          "Procesamiento de pagos vía Mercado Pago: la suscripción al Plan Premium de S/ 9.99 al mes se procesa a través de la pasarela de pagos Mercado Pago. CraveWallet no almacena números completos de tarjetas de crédito o débito ni códigos CVV en sus servidores; la transacción y la validación del pago son gestionadas por el procesador y confirmadas al backend mediante notificaciones verificadas.",
+          "Cancelación del Plan Premium: puedes cancelar la renovación de tu suscripción Premium en cualquier momento desde tu perfil. Al cancelar, conservarás todos los beneficios del Plan Premium hasta el cierre del período mensual ya pagado, tras lo cual tu cuenta volverá automáticamente al Plan Básico gratuito sin cargos adicionales."
+        ]
+      },
+      {
+        "id": "data-stored",
+        "title": "3. Datos almacenados, recordatorios y servicios de terceros",
+        "paragraphs": [
+          "En cumplimiento del principio de minimización de datos y en respuesta directa a la desconfianza hacia la vinculación bancaria, CraveWallet nunca solicita credenciales, claves digitales ni tokens de tus cuentas bancarias. Únicamente almacenamos y procesamos la información estrictamente necesaria para brindarte el servicio:"
+        ],
+        "bullets": [
+          "Datos de cuenta: correo electrónico de registro (account email), contraseña almacenada de forma cifrada (hash seguro) y moneda de referencia configurada en el perfil (PEN o USD).",
+          "Portafolio de suscripciones: nombre del servicio, monto original, moneda de facturación, categoría de gasto, ciclo de facturación (mensual o anual), próxima fecha de renovación y estado del registro (activa o cancelada).",
+          "Gastos de delivery y presupuestos: nombre del comercio, importe en soles (PEN), categoría, fecha del pedido y límite de presupuesto mensual configurado por el usuario (monthly budget) junto con su acumulado del período.",
+          "Recordatorios y permisos del dispositivo: generación de avisos 24 horas antes de cada renovación mediante eventos en el calendario nativo del dispositivo y notificaciones locales, los cuales se agendan únicamente si otorgas permiso explícito en Android, además de preferencias locales de interfaz (idioma y tema claro/oscuro).",
+          "Tasas de cambio vía API de terceros: para mostrar el equivalente en soles de suscripciones facturadas en dólares, nuestro backend consulta una API externa de tipos de cambio (ExchangeRate-API) a través de una capa de adaptación con caché de hasta 24 horas. El tipo de cambio mostrado es referencial e informativo; el cargo final en tu estado de cuenta depende del tipo de cambio aplicado por tu entidad bancaria en la fecha de corte."
+        ]
+      },
+      {
+        "id": "ethical-principles",
+        "title": "4. Compromiso ético profesional (ACM/IEEE y Código de Ética del CIP)",
+        "paragraphs": [
+          "El diseño, desarrollo y operación de CraveWallet por parte del equipo de Gastify (Mario Gabriel Sejuro Medina, Anghelo Edwin Faustino Hurtado, Sebastian Jared Roman Zeballos, Josué Francisco Carpio Peña y Alexander Aliaga) se rige expresamente por el Código de Ética y Práctica Profesional de Ingeniería de Software de la ACM/IEEE (ACM/IEEE Software Engineering Code of Ethics and Professional Practice) y por el Código de Ética del Colegio de Ingenieros del Perú (CIP). En particular, asumimos los siguientes compromisos vinculantes frente a nuestros usuarios y la sociedad:"
+        ],
+        "bullets": [
+          "Interés público y bienestar del usuario (Principio 1 ACM/IEEE · Deberes con la sociedad CIP): promovemos la educación y transparencia financiera sin inducir al endeudamiento ni emplear patrones oscuros (dark patterns) en la contratación o cancelación del Plan Premium.",
+          "Privacidad y confidencialidad (Principios 1.03 y 3.12 ACM/IEEE · Confidencialidad CIP): respetamos estrictamente la privacidad de tu información financiera declarada, recolectando solo los datos indispensables para calcular tu portafolio y presupuesto.",
+          "Honestidad y veracidad (Principios 1.06 y 6.07 ACM/IEEE · Veracidad y honestidad CIP): declaramos con total transparencia las capacidades reales del producto, el carácter referencial de las tasas de cambio externas y las limitaciones propias de la versión académica y de pruebas (APK).",
+          "Responsabilidad sobre los datos del usuario (Principio 3 ACM/IEEE · Responsabilidad profesional CIP): protegemos la integridad y disponibilidad de los registros asociados a tu cuenta mediante autenticación por tokens, cifrado en tránsito (HTTPS/TLS) y separación lógica por propietario.",
+          "No comercialización ni venta de datos: Gastify garantiza de manera absoluta que NO vende, alquila, cede ni comercializa tus datos personales, tu correo electrónico, tu lista de suscripciones ni tus hábitos de consumo de delivery a terceros, brokers de datos ni redes publicitarias."
+        ]
+      },
+      {
+        "id": "account-deletion",
+        "title": "5. Control del usuario, portabilidad y eliminación de cuenta",
+        "paragraphs": [
+          "Eres el único titular de la información que registras en CraveWallet. En cualquier momento puedes consultar, editar o eliminar individualmente tus suscripciones, gastos de delivery y límites de presupuesto desde la aplicación.",
+          "Asimismo, tienes derecho a solicitar la eliminación definitiva e irreversible de tu cuenta y de todos los datos asociados en nuestra base de datos (correo electrónico, historial de suscripciones, registros de delivery y presupuestos mensuales) enviando una solicitud a través de [COMPLETAR: enlace o correo para solicitud de eliminación de cuenta]. Procesaremos la baja definitiva en un plazo máximo de [COMPLETAR: plazo de atención en días hábiles, p. ej. 5 días hábiles] y confirmaremos la eliminación por correo electrónico."
+        ],
+        "bullets": []
+      },
+      {
+        "id": "contact",
+        "title": "6. Contacto, soporte y datos del titular",
+        "paragraphs": [
+          "Si tienes dudas sobre estos Términos y Condiciones, sobre el procesamiento del Plan Premium mediante Mercado Pago o sobre el tratamiento ético y responsable de tus datos personales, puedes comunicarte con el equipo de Gastify a través de los siguientes canales oficiales:"
+        ],
+        "bullets": [
+          "Titular del proyecto / Startup: Gastify — Equipo de Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas (UPC), Lima, Perú.",
+          "Identificación legal / RUC (si aplica): [COMPLETAR: razón social / RUC o identificación legal del responsable]",
+          "Correo electrónico de contacto y soporte: [COMPLETAR: correo de contacto]",
+          "Solicitudes de privacidad y eliminación de cuenta: [COMPLETAR: enlace o correo para solicitud de eliminación de cuenta]",
+          "Dirección o canal oficial de atención: [COMPLETAR: dirección o canal oficial de soporte]"
+        ]
+      }
+    ]
   },
   "phone": {
     "dashboard": {

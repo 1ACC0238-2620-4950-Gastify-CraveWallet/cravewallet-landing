@@ -4,7 +4,7 @@ import type { Dictionary } from "@/lib/i18n";
 
 function Check({ color }: { color: string }) {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="shrink-0 mt-0.5">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="shrink-0 mt-0.5" aria-hidden="true">
       <circle cx="12" cy="12" r="10" fill={`color-mix(in srgb, ${color} 13%, transparent)`} />
       <path d="M8 12l3 3 5-5" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -109,9 +109,11 @@ export default function Premium({ dict }: { dict: Dictionary["premium"] }) {
             </ul>
 
             <button
+              type="button"
               className="btn block w-full text-center bg-primary/30 text-white/50 font-semibold py-[var(--space-3)] text-sm cursor-not-allowed"
               style={{ borderRadius: "var(--radius-md)" }}
               disabled
+              aria-disabled="true"
             >
               {dict.pro.cta}
             </button>

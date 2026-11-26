@@ -59,6 +59,7 @@ export default function Problem({ lang, dict }: { lang: Locale; dict: Dictionary
     >
       {/* Ambient glow */}
       <div
+        aria-hidden="true"
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] pointer-events-none"
         style={{
           background:

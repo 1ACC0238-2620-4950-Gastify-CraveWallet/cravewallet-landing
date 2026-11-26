@@ -9,6 +9,7 @@ export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
     >
       {/* Single ambient glow */}
       <div
+        aria-hidden="true"
         className="absolute top-0 right-0 w-[700px] h-[700px] pointer-events-none"
         style={{
           background:
@@ -26,7 +27,7 @@ export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
               className="inline-flex items-center gap-[var(--space-2)] border border-white/10 text-white/55 text-xs font-medium px-[var(--space-3)] py-[var(--space-1)] mb-[var(--space-8)]"
               style={{ borderRadius: "var(--radius-xl)" }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-success" style={{ boxShadow: "0 0 6px rgba(34,197,94,0.8)" }} />
+              <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-success" style={{ boxShadow: "0 0 6px rgba(34,197,94,0.8)" }} />
               {dict.badge}
             </div>
 
@@ -56,7 +57,7 @@ export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
                 className="btn inline-flex items-center justify-center gap-[var(--space-2)] bg-primary text-on-primary font-semibold px-[var(--space-5)] py-[14px] text-sm hover:bg-primary-dark"
                 style={{ borderRadius: "var(--radius-md)" }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M3.18 23.76c.37.2.8.2 1.17-.02L21.4 14.1a1.1 1.1 0 0 0 0-1.9L4.35.57C4 .36 3.55.37 3.18.57A1.1 1.1 0 0 0 2.6 1.5v21a1.1 1.1 0 0 0 .58.96z" />
                 </svg>
                 {dict.ctaPrimary}
@@ -67,7 +68,7 @@ export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
                 style={{ borderRadius: "var(--radius-md)" }}
               >
                 {dict.ctaSecondary}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>

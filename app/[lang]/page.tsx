@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Features from "@/components/Features";
 import AppPreview from "@/components/AppPreview";
+import Videos from "@/components/Videos";
 import SocialProof from "@/components/SocialProof";
 import Premium from "@/components/Premium";
 import DownloadCTA from "@/components/DownloadCTA";
@@ -19,16 +20,17 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <Navbar lang={lang} dict={dict.nav} />
-      <main>
+      <main id="main-content" tabIndex={-1} className="focus:outline-none">
         <Hero dict={dict.hero} />                             {/* #hero     — dark  */}
         <Problem lang={lang} dict={dict.problem} />           {/* #problem  — dark  */}
         <Features dict={dict.features} />                     {/* #solution — white */}
         <AppPreview dict={dict.preview} tone={dict.tone} />    {/* #preview — light */}
+        <Videos dict={dict.videos} />                         {/* #videos   — conditional */}
         <SocialProof dict={dict.social} tone={dict.tone} />   {/*           — light */}
         <Premium dict={dict.premium} />                       {/* #premium  — surface-variant */}
         <DownloadCTA dict={dict.download} />                  {/* #download — dark  */}
       </main>
-      <Footer dict={dict.footer} />
+      <Footer lang={lang} dict={dict.footer} />
     </>
   );
 }
