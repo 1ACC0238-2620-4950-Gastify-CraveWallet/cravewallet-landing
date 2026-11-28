@@ -36,6 +36,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Todo menos los recursos internos y los archivos estáticos.
-  matcher: ["/((?!_next|.*\\..*).*)"],
+  // Todo menos las rutas de API, los recursos internos y los archivos estáticos.
+  matcher: ["/((?!api/|_next|.*\\..*).*)"],
 };
