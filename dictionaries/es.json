@@ -17,7 +17,8 @@
       { "label": "El problema", "href": "#problem" },
       { "label": "Solución", "href": "#solution" },
       { "label": "Descarga", "href": "#download" },
-      { "label": "Premium", "href": "#premium" }
+      { "label": "Premium", "href": "#premium" },
+      { "label": "Preguntas", "href": "#faq" }
     ],
     "cta": "Descargar gratis",
     "openMenu": "Abrir menú",
@@ -360,5 +361,43 @@
       "delta": "+0.03 vs ayer",
       "list": "Tus suscripciones en PEN"
     }
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que suelen preguntarnos antes de descargar.",
+    "items": [
+      {
+        "q": "¿CraveWallet cancela mis suscripciones por mí?",
+        "a": "No. CraveWallet te avisa antes de cada renovación para que decidas a tiempo, pero la cancelación se hace directamente con cada servicio."
+      },
+      {
+        "q": "¿Tengo que conectar mi cuenta bancaria?",
+        "a": "No. Tú registras tus suscripciones y gastos en la aplicación; CraveWallet no accede a tus cuentas ni a tus tarjetas."
+      },
+      {
+        "q": "¿Cómo calcula cuánto pago en soles?",
+        "a": "Usa una cotización del dólar con su fecha de actualización para estimar el monto. Es una referencia: el cargo final depende del tipo de cambio que aplique tu banco."
+      },
+      {
+        "q": "¿Cuándo recibo el aviso de un cobro?",
+        "a": "24 horas antes de la fecha de renovación que registraste, como una notificación en tu celular, si le das permiso a la aplicación."
+      },
+      {
+        "q": "¿Qué incluye el plan gratuito y cuánto cuesta Premium?",
+        "a": "El plan Básico es gratis e incluye hasta 5 suscripciones, alertas 24 horas antes de cada cobro y la conversión de PEN a USD. Premium cuesta S/ 9.99 al mes y agrega suscripciones ilimitadas, análisis por categoría y presupuesto mensual."
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Entérate cuando CraveWallet esté disponible.",
+    "body": "Déjanos tu correo y te avisaremos del lanzamiento y de futuras promociones. Nada más.",
+    "label": "Correo electrónico",
+    "placeholder": "tucorreo@ejemplo.com",
+    "submit": "Avísame",
+    "sending": "Enviando…",
+    "success": "¡Listo! Te avisaremos del lanzamiento.",
+    "invalid": "El correo no tiene un formato válido.",
+    "error": "No pudimos registrar tu correo. Inténtalo de nuevo.",
+    "privacy": "Solo usaremos tu correo para avisarte del lanzamiento."
   }
 }

@@ -10,6 +10,8 @@ import Videos from "@/components/Videos";
 import SocialProof from "@/components/SocialProof";
 import Premium from "@/components/Premium";
 import DownloadCTA from "@/components/DownloadCTA";
+import Faq from "@/components/Faq";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
@@ -28,6 +30,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Videos dict={dict.videos} />                         {/* #videos   — conditional */}
         <SocialProof dict={dict.social} tone={dict.tone} />   {/*           — light */}
         <Premium dict={dict.premium} />                       {/* #premium  — surface-variant */}
+        <Faq dict={dict.faq} />                               {/* #faq      — surface */}
+        <Newsletter lang={lang} dict={dict.newsletter} />     {/* #newsletter — primary */}
         <DownloadCTA dict={dict.download} />                  {/* #download — dark  */}
       </main>
       <Footer lang={lang} dict={dict.footer} />

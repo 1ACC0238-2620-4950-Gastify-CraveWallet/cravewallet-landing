@@ -17,7 +17,8 @@
       { "label": "The problem", "href": "#problem" },
       { "label": "Solution", "href": "#solution" },
       { "label": "Download", "href": "#download" },
-      { "label": "Premium", "href": "#premium" }
+      { "label": "Premium", "href": "#premium" },
+      { "label": "FAQ", "href": "#faq" }
     ],
     "cta": "Download free",
     "openMenu": "Open menu",
@@ -360,5 +361,43 @@
       "delta": "+0.03 vs yesterday",
       "list": "Your subscriptions in PEN"
     }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "What people usually ask before downloading.",
+    "items": [
+      {
+        "q": "Does CraveWallet cancel my subscriptions for me?",
+        "a": "No. CraveWallet reminds you before each renewal so you can decide in time, but you cancel directly with each service."
+      },
+      {
+        "q": "Do I have to connect my bank account?",
+        "a": "No. You add your subscriptions and expenses in the app; CraveWallet never accesses your accounts or cards."
+      },
+      {
+        "q": "How does it calculate what I pay in soles?",
+        "a": "It uses a dollar exchange rate, shown with the time it was updated, to estimate the amount. It is a reference: the final charge depends on the rate your bank applies."
+      },
+      {
+        "q": "When do I get a payment reminder?",
+        "a": "24 hours before the renewal date you entered, as a notification on your phone, if you allow the app to send them."
+      },
+      {
+        "q": "What does the free plan include, and how much is Premium?",
+        "a": "The Basic plan is free and includes up to 5 subscriptions, alerts 24 hours before each charge and PEN to USD conversion. Premium costs S/ 9.99 a month and adds unlimited subscriptions, spending by category and a monthly budget."
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Find out when CraveWallet launches.",
+    "body": "Leave your email and we will let you know about the launch and future promotions. Nothing else.",
+    "label": "Email address",
+    "placeholder": "you@example.com",
+    "submit": "Notify me",
+    "sending": "Sending…",
+    "success": "Done! We will let you know when we launch.",
+    "invalid": "That email address is not valid.",
+    "error": "We could not save your email. Please try again.",
+    "privacy": "We will only use your email to tell you about the launch."
   }
 }
